@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Primary Meta Tags -->
+    <title>Amit Halder | GenAI Developer & Machine Learning Engineer</title>
+    <meta name="title" content="Amit Halder | GenAI Developer & Machine Learning Engineer" />
+    <meta
+      name="description"
+      content="Portfolio of Amit Halder — GenAI Developer & Machine Learning Engineer specialized in LLM integration, prompt engineering, AI workflow automation, and enterprise data analysis."
+    />
+    <meta name="author" content="Amit Halder" />
+    <meta name="keywords" content="Amit Halder, GenAI Developer, Machine Learning Engineer, AI Automation, LLM, Prompt Engineering, Data Analysis, Power BI, Python, Intuit, Mphasis" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Amit Halder | GenAI Developer & Machine Learning Engineer" />
+    <meta
+      property="og:description"
+      content="Bridging AI systems with real-world business operations. Specialized in LLM integration, prompt engineering, and AI workflow automation."
+    />
+    <meta property="og:image" content="/favicon.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Amit Halder | GenAI Developer & Machine Learning Engineer" />
+    <meta
+      property="twitter:description"
+      content="Bridging AI systems with real-world business operations. Specialized in LLM integration, prompt engineering, and AI workflow automation."
+    />
+    <meta property="twitter:image" content="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme initialization script to prevent FOUC -->
+    <script>
+      (function () {
+        try {
+          const theme = localStorage.getItem('ah_portfolio_theme');
+          const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (theme === 'light' || (!theme && !systemPrefersDark)) {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          } else {
+            document.documentElement.classList.remove('light');
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Amit Halder",
+        "jobTitle": "GenAI Developer / Machine Learning Engineer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kolkata",
+          "addressRegion": "West Bengal",
+          "addressCountry": "India"
+        },
+        "email": "askfor.amithalder@gmail.com",
+        "telephone": "+917003660883",
+        "url": "https://linkedin.com/in/amit-halder",
+        "sameAs": [
+          "https://linkedin.com/in/amit-halder"
+        ],
+        "knowsAbout": [
+          "Generative AI",
+          "Large Language Models (LLMs)",
+          "Machine Learning",
+          "Prompt Engineering",
+          "AI Workflow Automation",
+          "Data Analysis",
+          "Power BI",
+          "ERP Systems",
+          "Python"
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-dark-bg text-slate-100 antialiased selection:bg-brand-cyan/20 selection:text-brand-cyan transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
