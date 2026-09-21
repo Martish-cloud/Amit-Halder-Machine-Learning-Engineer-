@@ -1,81 +1,347 @@
-# Amit Halder — GenAI Developer & Machine Learning Engineer Portfolio
+# 🧠 Amit Halder — GenAI Developer & Machine Learning Engineer
 
-[![Production Build](https://img.shields.io/badge/Build-Passing-emerald?style=flat-square)](https://github.com/Martish-cloud/Amit-Halder-Machine-Learning-Engineer-)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-black?style=flat-square&logo=framer)](https://www.framer.com/motion/)
+<div align="center">
 
-A production-ready, high-performance, and visually exceptional personal portfolio website for **Amit Halder**, presenting his expertise across Generative AI development, Machine Learning, AI automation, enterprise data analytics, and industrial operations.
+<img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=600&size=28&duration=3000&pause=1000&color=4F46E5&center=true&vCenter=true&width=800&lines=GenAI+Developer;Machine+Learning+Engineer;AI+Automation+Builder;Data+%26+Business+Analytics;Bridging+AI+with+Real-World+Operations" alt="Typing Animation" />
 
-> **Value Proposition**: *"Bridging AI systems with real-world business operations."*
+<br/>
 
----
+<img src="https://komarev.com/ghpvc/?username=Martish-cloud&label=Portfolio%20Views&color=4F46E5&style=flat-square" alt="Portfolio Views" />
 
-## 🌟 Core Highlights & Architectural Philosophy
+[![Production Build](https://img.shields.io/badge/Build-Passing-10B981?style=for-the-badge\&logo=github)](https://github.com/Martish-cloud/Amit-Halder-Machine-Learning-Engineer-)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge\&logo=react\&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge\&logo=typescript\&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?style=for-the-badge\&logo=vite\&logoColor=white)](https://vitejs.dev/)
 
-- **Single Source of Truth**: Grounded 100% in Amit Halder's authentic professional CV.
-- **Dual-Domain Authority**: Highlights the unique synergy between **2+ years** in Generative AI/ML engineering (Intuit, Mphasis) and **6+ years** in industrial print production, WIP tracking, MRP, and ERP data governance (York Print, Jay Boxes, Pioneer Mega Printers).
-- **Design Language**: Obsidian dark-first aesthetic with refined glassmorphism, subtle neon accents, editorial typography, fine borders, and smooth shadows.
-- **Dynamic Theming**: Seamless Dark & Light mode toggle with `localStorage` persistence and automatic system preference synchronization (`prefers-color-scheme`).
-- **Motion System**: Smooth spring animations, scroll-linked progress indicators, staggered entrances, responsive mobile menu drawer, and desktop custom cursor with reactive states (`pointer: fine`).
-- **Zero-Lag Geometry**: High-performance SVG background node grids and mathematics-inspired motifs avoiding heavy WebGL canvas overhead.
-- **Full Accessibility (a11y)**: Built with semantic HTML5 landmarks, ARIA live regions, keyboard navigation focus rings, and strict `prefers-reduced-motion` compliance.
-- **SEO & Social Sharing**: Complete OpenGraph, Twitter Card meta tags, and schema.org `Person` JSON-LD structured data.
+<br/><br/>
+
+**A production-ready personal portfolio showcasing Generative AI, Machine Learning, automation, analytics, and enterprise operations.**
+
+### *“Bridging AI systems with real-world business operations.”*
+
+</div>
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ About This Portfolio
 
-| Layer | Technology |
-|---|---|
-| **Framework** | [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) |
-| **Build Tool** | [Vite 6](https://vitejs.dev/) |
-| **Styling** | [Tailwind CSS 3.4](https://tailwindcss.com/) + PostCSS |
-| **Animation** | [Framer Motion](https://www.framer.com/motion/) |
-| **Icons** | [Lucide React](https://lucide.dev/) |
-| **Typography** | Plus Jakarta Sans, Space Grotesk, JetBrains Mono |
+This repository contains the source code for my personal **GenAI Developer & Machine Learning Engineer portfolio**.
+
+The portfolio is designed around a simple idea:
+
+> **Modern AI becomes more valuable when it solves real operational and business problems.**
+
+My professional journey combines **Generative AI & Machine Learning engineering** with extensive experience in **production planning, manufacturing operations, ERP systems, WIP management, quality, and business data**.
+
+This portfolio brings those two worlds together.
 
 ---
 
-## 📂 Project Structure
+## 🚀 What You'll Find
 
+<table>
+<tr>
+<td width="50%">
+
+### 🤖 Generative AI
+
+* LLM applications
+* Prompt engineering
+* AI agents
+* AI automation
+* API integrations
+* Synthetic data
+* GenAI workflows
+
+</td>
+<td width="50%">
+
+### 🧠 Machine Learning
+
+* Machine Learning
+* NLP
+* Data preprocessing
+* Model experimentation
+* AI-assisted analytics
+* Python-based workflows
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### 📊 Data & Analytics
+
+* SQL
+* Microsoft Excel
+* Power BI
+* Data cleaning
+* Business reporting
+* Dashboard development
+* Data-driven decision support
+
+</td>
+<td>
+
+### ⚙️ Enterprise Operations
+
+* ERP systems
+* Production planning
+* WIP management
+* MRP workflows
+* Quality systems
+* Dispatch coordination
+* Manufacturing analytics
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🎯 Career Evolution
+
+```text
+Production Operations
+        │
+        ▼
+Planning & Quality
+        │
+        ▼
+ERP & WIP Data Management
+        │
+        ▼
+Data Analytics & Automation
+        │
+        ▼
+Machine Learning
+        │
+        ▼
+Generative AI
+        │
+        ▼
+AI Systems & Business Automation
 ```
+
+The portfolio intentionally presents this evolution as a connected technical journey rather than treating my AI experience and industrial experience as unrelated careers.
+
+---
+
+# 🏆 Professional Experience
+
+### 🤖 GenAI Developer — Intuit
+
+**Jan 2026 – Apr 2026 · Remote**
+
+Working across Generative AI, automation, data, and AI-powered development workflows.
+
+---
+
+### 🧠 GenAI Intern — Mphasis
+
+**Nov 2025 – Dec 2025 · Remote**
+
+Hands-on exposure to enterprise AI workflows, Generative AI technologies, and practical ML/AI development.
+
+---
+
+### 🏭 Assistant PPC Manager / R&D Companion — Pioneer Mega Printers
+
+**Jun 2025 – Nov 2025**
+
+Production planning, R&D support, operational analytics, quality systems, and process optimization.
+
+---
+
+### 📦 Production Supervisor / Quality Executive — Jay Boxes
+
+**Mar 2024 – May 2025**
+
+Production supervision, quality control, workflow coordination, and operational data management.
+
+---
+
+### 📊 PPC Assistant / Dispatch Coordinator — York Print Pvt. Ltd.
+
+**Mar 2023 – Feb 2024 · Ahmedabad**
+
+Planning, dispatch coordination, production tracking, and operational reporting.
+
+---
+
+### ⚙️ PPC Executive / WIP Management — York Print Pvt. Ltd.
+
+**Mar 2020 – Feb 2023 · Assam**
+
+WIP tracking, production planning, ERP workflows, inventory coordination, and manufacturing operations.
+
+---
+
+# 🛠️ Technology Stack
+
+<div align="center">
+
+### Development
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square\&logo=python\&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square\&logo=typescript\&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square\&logo=react\&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square\&logo=vite\&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square\&logo=tailwind-css\&logoColor=white)
+
+### AI & Machine Learning
+
+![OpenAI](https://img.shields.io/badge/LLMs-412991?style=flat-square)
+![Machine Learning](https://img.shields.io/badge/Machine_Learning-FF6F00?style=flat-square)
+![NLP](https://img.shields.io/badge/NLP-8E44AD?style=flat-square)
+![Prompt Engineering](https://img.shields.io/badge/Prompt_Engineering-111827?style=flat-square)
+![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square\&logo=n8n\&logoColor=white)
+
+### Data & Business Intelligence
+
+![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square)
+![Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=flat-square\&logo=microsoftexcel\&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square\&logo=powerbi\&logoColor=black)
+
+### Creative & Media
+
+![DaVinci Resolve](https://img.shields.io/badge/DaVinci_Resolve-233A51?style=flat-square)
+![Canva](https://img.shields.io/badge/Canva-00C4CC?style=flat-square\&logo=canva\&logoColor=white)
+
+</div>
+
+---
+
+# 🏗️ Architecture & Engineering Philosophy
+
+The portfolio follows a **component-driven React architecture** with a centralized data model.
+
+```text
+                    ┌──────────────────────┐
+                    │     profile.ts       │
+                    │  Single Source of    │
+                    │       Truth          │
+                    └──────────┬───────────┘
+                               │
+             ┌─────────────────┼─────────────────┐
+             ▼                 ▼                 ▼
+        Experience           Skills          Education
+             │                 │                 │
+             └─────────────────┼─────────────────┘
+                               ▼
+                        React Components
+                               │
+                               ▼
+                        Framer Motion
+                               │
+                               ▼
+                         Responsive UI
+```
+
+### Design Principles
+
+* ⚡ Performance-first rendering
+* 🧩 Reusable React components
+* 🎨 Centralized theme variables
+* 📱 Mobile-first responsive design
+* ♿ Accessibility-conscious UI
+* 🔍 SEO-friendly structure
+* 🌙 Dark / Light theme support
+* 🎞️ Reduced-motion compatibility
+* 🧠 No fabricated skill percentages
+* 📦 Centralized professional data
+
+---
+
+# 🎨 UI & Motion System
+
+The portfolio uses animation as a **functional design layer**, rather than simply adding visual effects.
+
+### ✨ Included Animations
+
+* Smooth page entrance
+* Staggered section reveals
+* Spring-based interactions
+* Hover transformations
+* Animated navigation states
+* Scroll progress indicator
+* Interactive timeline transitions
+* Mobile navigation drawer
+* Theme transition
+* Reactive desktop cursor
+* Animated skill/toolkit cards
+* Micro-interactions for buttons and contact actions
+
+### 🌀 Motion Philosophy
+
+```text
+User Action
+    ↓
+Interaction Feedback
+    ↓
+Micro Animation
+    ↓
+Visual Confirmation
+    ↓
+Next Interaction
+```
+
+Animations respect:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  /* Motion is minimized for accessibility */
+}
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+.
 ├── public/
-│   ├── Amit_Halder_Resume.pdf    # Direct CV download asset
-│   └── favicon.svg               # Geometric "AH" monogram favicon
+│   ├── Amit_Halder_Resume.pdf
+│   └── favicon.svg
+│
 ├── src/
 │   ├── data/
-│   │   └── profile.ts            # Centralized typed CV data (single source of truth)
+│   │   └── profile.ts
+│   │
 │   ├── types/
-│   │   └── index.ts              # Strict TypeScript interfaces
+│   │   └── index.ts
+│   │
 │   ├── hooks/
-│   │   ├── useTheme.ts           # Dark/Light theme manager with system listener
-│   │   └── useScrollSpy.ts       # Performant scroll-tracking hook
+│   │   ├── useTheme.ts
+│   │   └── useScrollSpy.ts
+│   │
 │   ├── components/
-│   │   ├── Navbar.tsx            # Floating glass navbar + mobile drawer
-│   │   ├── Footer.tsx            # Technical minimal footer
-│   │   ├── ThemeToggle.tsx       # Sun/Moon animated theme toggle
-│   │   ├── CustomCursor.tsx      # Desktop-only reactive pointer system
-│   │   ├── Loader.tsx            # Short monogram entrance sequence
-│   │   ├── BackgroundGrid.tsx    # Lightweight ambient SVG grid & glow
-│   │   ├── ScrollProgress.tsx    # Top viewport reading progress bar
-│   │   └── icons.tsx             # Standalone SVG icons (LinkedIn, etc.)
+│   │   ├── Navbar.tsx
+│   │   ├── Footer.tsx
+│   │   ├── ThemeToggle.tsx
+│   │   ├── CustomCursor.tsx
+│   │   ├── Loader.tsx
+│   │   ├── BackgroundGrid.tsx
+│   │   ├── ScrollProgress.tsx
+│   │   └── icons.tsx
+│   │
 │   ├── sections/
-│   │   ├── Hero.tsx              # Headline, quick contact pills, CTAs
-│   │   ├── About.tsx             # Editorial summary & 5 competence pillars
-│   │   ├── CareerEvolution.tsx   # Trajectory: Production -> Data -> Automation -> GenAI/ML
-│   │   ├── Experience.tsx        # Interactive timeline for all 6 authentic roles
-│   │   ├── Skills.tsx            # Categorized capabilities without fake percentages
-│   │   ├── TechOrbit.tsx         # Responsive AI & Engineering Toolkit matrix
-│   │   ├── Education.tsx         # Formal academic degrees & 6 languages
-│   │   ├── Certifications.tsx    # 13 verified credentials with category filters
-│   │   └── Contact.tsx           # Copyable email, phone, LinkedIn, CV download
-│   ├── App.tsx                   # Main layout component
-│   ├── index.css                 # Tailwind directives, CSS variables & scrollbars
-│   └── main.tsx                  # Application entrypoint
-├── index.html                    # SEO tags, OpenGraph, JSON-LD, fonts
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── CareerEvolution.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Skills.tsx
+│   │   ├── TechOrbit.tsx
+│   │   ├── Education.tsx
+│   │   ├── Certifications.tsx
+│   │   └── Contact.tsx
+│   │
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+│
+├── index.html
 ├── tailwind.config.js
 ├── tsconfig.json
 └── vite.config.ts
@@ -83,81 +349,232 @@ A production-ready, high-performance, and visually exceptional personal portfoli
 
 ---
 
-## 📋 Sections Overview
+# 📋 Portfolio Sections
 
-1. **Hero**: Editorial typography, verified metrics (2+ Yrs GenAI, 6+ Yrs Ops, 13 Certs, 6 Languages), CV download, and quick contact pills.
-2. **About / Professional Profile**: Split layout contrasting high-level executive summary with 5 core competence pillars:
-   - Generative AI & LLMs
-   - Machine Learning & NLP
-   - AI Workflow Automation
-   - Data & Business Analytics
-   - Enterprise Operations & ERP
-3. **Career Evolution**: Interactive step-by-step narrative demonstrating how 6+ years of operational discipline directly empowered modern GenAI architecture.
-4. **Experience Timeline**: Chronological, filterable interactive timeline of all 6 authentic roles:
-   - GenAI Developer (Remote) — *Intuit* (Jan 2026 – Apr 2026)
-   - GenAI Intern (Remote) — *Mphasis* (Nov 2025 – Dec 2025)
-   - Assistant PPC Manager / R&D Companion — *Pioneer Mega Printers* (Jun 2025 – Nov 2025)
-   - Production Supervisor / Quality Executive — *Jay Boxes* (Mar 2024 – May 2025)
-   - PPC Assistant / Dispatch Coordinator — *York Print Pvt. Ltd. Unit-IV, Ahmedabad* (Mar 2023 – Feb 2024)
-   - PPC Executive / WIP Management — *York Print Pvt. Ltd. Unit-VI, Assam* (Mar 2020 – Feb 2023)
-5. **Skills & Capabilities**: 6 interactive capability groups (Generative AI, ML & NLP, AI Automation, Data & BI, ERP Systems, Media & Design) with zero fabricated percentage bars.
-6. **AI Toolkit Matrix**: Responsive interactive grid showcasing Python, LLMs, Prompt Engineering, SQL, Power BI, DaVinci Resolve, n8n, and ERP systems.
-7. **Education & Languages**: Formal degrees (IGNOU B.A. pursuing, WBCHSE, French Language at Henry Harvin) and 6 language proficiencies (Bengali, English, Hindi, Assamese, French, Japanese).
-8. **13 Verified Certifications**: Filterable directory of genuine certificates from IBM, Deloitte, Simplilearn, Udemy, Tutedude, and LearnTube.AI.
-9. **Contact & Resume Download**: One-click copy email with feedback animation, direct call link, LinkedIn redirect, and verified PDF resume download.
+| Section             | Purpose                                   |
+| ------------------- | ----------------------------------------- |
+| 🏠 Hero             | Professional positioning, metrics & CTAs  |
+| 👨‍💻 About         | Professional profile & competence pillars |
+| 🧬 Career Evolution | Production → Data → Automation → AI       |
+| 💼 Experience       | Interactive professional timeline         |
+| 🛠️ Skills          | Categorized technical capabilities        |
+| 🌐 AI Toolkit       | Technologies & engineering tools          |
+| 🎓 Education        | Academic background & languages           |
+| 🏅 Certifications   | Verified professional credentials         |
+| 📩 Contact          | Email, phone, LinkedIn & CV               |
 
 ---
 
-## 🚀 Local Development
+# 📊 Portfolio Highlights
 
-### Prerequisites
-- Node.js `v18+` or `v20+` (Tested on `v24.x`)
-- npm `v9+` (Tested on `v11.x`)
+<div align="center">
 
-### Installation
+|      Metric     | Experience                  |
+| :-------------: | :-------------------------- |
+| 🤖 **2+ Years** | Generative AI / ML          |
+| 🏭 **6+ Years** | Production & Operations     |
+|    🏅 **13**    | Professional Certifications |
+|     🌐 **6**    | Languages                   |
+| ⚙️ **Multiple** | AI & Automation Workflows   |
+
+</div>
+
+---
+
+# 🌙 Theme System
+
+The portfolio supports both:
+
+```text
+┌───────────────────────┐
+│       DARK MODE       │
+│                       │
+│  Obsidian / Charcoal  │
+│  Glassmorphism        │
+│  Subtle Neon Accents  │
+└───────────────────────┘
+
+            ↕
+
+┌───────────────────────┐
+│       LIGHT MODE      │
+│                       │
+│  Clean Editorial UI   │
+│  High Contrast        │
+│  Minimal Surfaces     │
+└───────────────────────┘
+```
+
+Theme preferences are persisted through `localStorage` and can synchronize with the user's system preference.
+
+---
+
+# ⚡ Performance
+
+Performance was treated as a first-class engineering requirement.
+
+### Optimization Approach
+
+* Lightweight SVG backgrounds instead of heavy WebGL
+* Component-level rendering
+* Minimal dependencies
+* Responsive image handling
+* CSS-based visual effects
+* Lazy loading where appropriate
+* Reduced animation complexity on mobile
+* `prefers-reduced-motion` support
+* Production Vite bundling
+
+### Goal
+
+> **Premium visual quality without sacrificing responsiveness.**
+
+---
+
+# ♿ Accessibility
+
+The interface includes:
+
+* Semantic HTML5 landmarks
+* Keyboard navigation
+* Visible focus states
+* ARIA labels where required
+* Accessible interactive controls
+* Reduced-motion support
+* Responsive typography
+* Contrast-conscious UI
+* Screen-reader-friendly structure
+
+---
+
+# 🔎 SEO & Social Sharing
+
+The application includes:
+
+* Semantic page structure
+* Meta descriptions
+* OpenGraph metadata
+* Twitter/X card metadata
+* Canonical metadata
+* Person structured data
+* Search-engine-friendly content
+* Social preview optimization
+
+---
+
+# 🚀 Run Locally
+
+### 1. Clone
+
 ```bash
-# Clone the repository
 git clone https://github.com/Martish-cloud/Amit-Halder-Machine-Learning-Engineer-.git
+```
 
-# Navigate into project directory
+### 2. Enter the project
+
+```bash
 cd Amit-Halder-Machine-Learning-Engineer-
+```
 
-# Install dependencies
+### 3. Install dependencies
+
+```bash
 npm install
 ```
 
-### Run Locally
+### 4. Start development server
+
 ```bash
 npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+Open:
+
+```text
+http://localhost:5173
+```
 
 ---
 
-## 🏗️ Production Build & Verification
+# 🏗️ Production Build
+
+Run the production build:
 
 ```bash
-# Typecheck and build production bundle
 npm run build
+```
 
-# Preview production build locally
+Preview the production bundle:
+
+```bash
 npm run preview
 ```
-The optimized production output will be generated inside the `dist/` directory.
+
+Generated files:
+
+```text
+dist/
+```
 
 ---
 
-## 🌐 Deployment Notes
+# 🌐 Deployment
 
-This portfolio is a static single-page application (SPA) that can be seamlessly deployed on:
-- **Vercel**: Import repository and deploy automatically.
-- **Netlify**: Connect Git repository, set build command `npm run build` and publish directory `dist`.
-- **GitHub Pages**: Build output in `dist` can be deployed via GitHub Actions or the `gh-pages` branch.
-- **Cloudflare Pages**: Connect Git repository, build command `npm run build`, output directory `dist`.
+This static React SPA can be deployed using:
+
+* ▲ Vercel
+* ☁️ Cloudflare Pages
+* 🌊 Netlify
+* 🐙 GitHub Pages
+
+Typical configuration:
+
+```text
+Build Command:
+npm run build
+
+Output Directory:
+dist
+```
 
 ---
 
-## 📄 License & Attribution
+# 🔗 Repository
 
-Designed and engineered for **Amit Halder**. Content sourced strictly from official CV documentation.
-All rights reserved © 2026.
+<div align="center">
+
+### ⭐ Explore the source code
+
+[![GitHub Repository](https://img.shields.io/badge/GitHub-View%20Repository-181717?style=for-the-badge\&logo=github)](https://github.com/Martish-cloud/Amit-Halder-Machine-Learning-Engineer-)
+
+</div>
+
+---
+
+# 📬 Contact
+
+<div align="center">
+
+### Amit Halder
+
+**GenAI Developer · Machine Learning Engineer · AI Automation · Data Analytics**
+
+Building practical AI systems that connect technology with real-world business operations.
+
+<br/>
+
+**📧 Email · 💼 LinkedIn · 📄 Resume**
+
+</div>
+
+---
+
+<div align="center">
+
+### 💡 Build. Automate. Analyze. Evolve.
+
+<img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:1D2937,50:44575E,100:651724" width="100%" />
+
+**© 2026 Amit Halder · All Rights Reserved**
+
+</div>
