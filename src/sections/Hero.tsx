@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   ArrowDown,
@@ -15,35 +15,69 @@ import {
 import { LinkedinIcon } from '../components/icons';
 import { personalInfo } from '../data/profile';
 
-// ─── Typewriter Hook ────────────────────────────────────────────────────────
-function useTypewriter(text: string, speed = 70) {
+// ─── Staggered Letter Reveal ─────────────────────────────────────────────────
+// Each letter clips upward from behind an overflow-hidden mask.
+// Words are separated by a visible space.
+
+const letterVariants = {
+  hidden: { y: '110%', opacity: 0 },
+  visible: (i: number) => ({
+    y: '0%',
+    opacity: 1,
+    transition: {
+      delay: 0.08 + i * 0.045,
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
+  }),
+};
+
+function AnimatedName({ text }: { text: string }) {
   const prefersReduced = useReducedMotion();
-  const [displayed, setDisplayed] = useState(() => (prefersReduced ? text : ''));
-  const [done, setDone] = useState(() => !!prefersReduced);
 
-  useEffect(() => {
-    if (prefersReduced) return;
-    setDisplayed('');
-    setDone(false);
-    let i = 0;
-    const timer = setInterval(() => {
-      i++;
-      setDisplayed(text.slice(0, i));
-      if (i >= text.length) {
-        clearInterval(timer);
-        setDone(true);
-      }
-    }, speed);
-    return () => clearInterval(timer);
-  }, [text, speed, prefersReduced]);
+  if (prefersReduced) {
+    return <span>{text}</span>;
+  }
 
-  return { displayed, done };
+  // Split into words so we can add a natural space between them
+  const words = text.split(' ');
+  let globalIdx = 0;
+
+  return (
+    <>
+      {words.map((word, wIdx) => (
+        <span key={wIdx} className="inline-flex">
+          {/* Each letter clipped by its overflow-hidden wrapper */}
+          {Array.from(word).map((char) => {
+            const idx = globalIdx++;
+            return (
+              <span key={idx} className="inline-block overflow-hidden leading-none">
+                <motion.span
+                  className="inline-block"
+                  variants={letterVariants}
+                  initial="hidden"
+                  animate="visible"
+                  custom={idx}
+                  aria-hidden="true"
+                >
+                  {char}
+                </motion.span>
+              </span>
+            );
+          })}
+          {/* Word space (except after last word) */}
+          {wIdx < words.length - 1 && (
+            <span className="inline-block" style={{ width: '0.35em' }} />
+          )}
+        </span>
+      ))}
+    </>
+  );
 }
 
 export const Hero: React.FC = () => {
-  const prefersReduced = useReducedMotion();
   const heroName = personalInfo.name.toUpperCase();
-  const { displayed, done } = useTypewriter(heroName, 68);
+
 
   // Bounce animation for professional title
   const bounceVariants = {
@@ -57,18 +91,16 @@ export const Hero: React.FC = () => {
         ease: 'easeOut' as const,
       },
     },
-    idle: prefersReduced
-      ? {}
-      : {
-          y: [0, -5, 0],
-          transition: {
-            duration: 2.8,
-            ease: 'easeInOut' as const,
-            repeat: 2,
-            repeatType: 'loop' as const,
-            delay: 1.2,
-          },
-        },
+    idle: {
+      y: [0, -5, 0],
+      transition: {
+        duration: 2.8,
+        ease: 'easeInOut' as const,
+        repeat: 2,
+        repeatType: 'loop' as const,
+        delay: 1.2,
+      },
+    },
   };
 
   return (
@@ -90,23 +122,13 @@ export const Hero: React.FC = () => {
           <Sparkles className="w-3.5 h-3.5 ml-1" />
         </motion.div>
 
-        {/* Hero Headline — Typewriter Effect */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-slate-900 dark:text-brand-warm-gray min-h-[1.2em] flex items-center justify-center"
+        {/* Hero Headline — Staggered Letter Reveal */}
+        <h1
+          className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-slate-900 dark:text-brand-warm-gray flex items-baseline justify-center flex-wrap gap-y-1"
           aria-label={heroName}
         >
-          <span aria-hidden="true">{displayed}</span>
-          {/* Blinking cursor — hidden when done typing or reduced motion */}
-          {!done && !prefersReduced && (
-            <span
-              className="inline-block w-[3px] h-[0.85em] ml-1 bg-brand-burgundy animate-cursor-blink align-middle"
-              aria-hidden="true"
-            />
-          )}
-        </motion.h1>
+          <AnimatedName text={heroName} />
+        </h1>
 
         {/* Sub-headline / Professional Title — Bounce */}
         <motion.div
