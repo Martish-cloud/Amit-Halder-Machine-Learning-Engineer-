@@ -35,10 +35,10 @@ export const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-dark-bg text-slate-100"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-dark-bg text-brand-warm-gray"
         >
-          {/* Ambient center glow */}
-          <div className="absolute w-72 h-72 rounded-full bg-brand-cyan/10 blur-[100px] pointer-events-none" />
+          {/* Ambient center glow — burgundy, restrained */}
+          <div className="absolute w-72 h-72 rounded-full bg-brand-burgundy/8 blur-[100px] pointer-events-none" />
 
           {/* Monogram Symbol */}
           <div className="relative mb-6">
@@ -51,8 +51,8 @@ export const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
               <svg viewBox="0 0 64 64" className="w-12 h-12">
                 <defs>
                   <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#06b6d4" />
-                    <stop offset="100%" stopColor="#8b5cf6" />
+                    <stop offset="0%" stopColor="#651724" />
+                    <stop offset="100%" stopColor="#44575E" />
                   </linearGradient>
                 </defs>
                 <path
@@ -78,17 +78,17 @@ export const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
           {/* Progress bar container */}
           <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden relative">
             <motion.div
-              className="h-full bg-gradient-to-r from-brand-cyan to-brand-violet rounded-full"
+              className="h-full bg-gradient-to-r from-brand-burgundy to-brand-slate rounded-full"
               style={{ width: `${progress}%` }}
               transition={{ ease: 'easeOut', duration: 0.1 }}
             />
           </div>
 
           {/* Text status */}
-          <div className="mt-3 font-mono text-xs text-slate-400 flex items-center gap-2">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-cyan animate-ping" />
+          <div className="mt-3 font-mono text-xs text-brand-slate flex items-center gap-2">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-burgundy animate-ping" />
             <span>INITIALIZING SYSTEM</span>
-            <span className="text-brand-cyan">{progress}%</span>
+            <span className="text-brand-burgundy">{progress}%</span>
           </div>
         </motion.div>
       )}

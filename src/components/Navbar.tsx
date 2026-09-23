@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, Sparkles } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { personalInfo } from '../data/profile';
 
@@ -18,6 +18,7 @@ const navLinks = [
   { label: 'Skills', href: '#skills' },
   { label: 'Education', href: '#education' },
   { label: 'Certifications', href: '#certifications' },
+  { label: 'Inquiry', href: '#inquiry' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -63,16 +64,16 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, isDark, toggleThe
         {/* Brand Monogram & Name */}
         <a
           href="#home"
-          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-xl"
+          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-burgundy rounded-xl"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-cyan/20 to-brand-violet/20 border border-brand-cyan/30 flex items-center justify-center font-display font-bold text-sm tracking-wider text-slate-100 dark:text-white group-hover:border-brand-cyan/80 transition-colors shadow-sm">
-            <span className="text-gradient-cyan font-mono">AH</span>
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-burgundy/20 to-brand-navy/30 border border-brand-burgundy/30 flex items-center justify-center font-display font-bold text-sm tracking-wider text-slate-100 dark:text-white group-hover:border-brand-burgundy/70 transition-colors shadow-sm">
+            <span className="font-mono text-brand-burgundy dark:text-brand-warm-gray font-bold text-xs">AH</span>
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-bold text-sm tracking-tight text-slate-900 dark:text-white group-hover:text-brand-cyan transition-colors">
+            <span className="font-display font-bold text-sm tracking-tight text-slate-900 dark:text-brand-warm-gray group-hover:text-brand-burgundy transition-colors">
               {personalInfo.name}
             </span>
-            <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 hidden sm:block">
+            <span className="text-[11px] font-mono text-brand-slate hidden sm:block">
               GenAI / ML Engineer
             </span>
           </div>
@@ -89,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, isDark, toggleThe
               <a
                 key={link.href}
                 href={link.href}
-                className={`relative px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
+                className={`relative px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
                   isActive
                     ? 'text-white dark:text-white font-semibold'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -98,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, isDark, toggleThe
                 {isActive && (
                   <motion.div
                     layoutId="activeNavIndicator"
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-cyan to-brand-blue shadow-sm"
+                    className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-burgundy to-brand-slate shadow-sm"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -113,11 +114,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, isDark, toggleThe
           <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
 
           <a
-            href="#contact"
-            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-brand-cyan/10 hover:bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/30 hover:border-brand-cyan/60 transition-all duration-200 group"
+            href="#inquiry"
+            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-brand-burgundy text-white hover:bg-brand-burgundy/90 border border-brand-burgundy/50 hover:border-brand-burgundy transition-all duration-200 shadow-sm"
           >
-            <span>Let's Connect</span>
-            <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <span>Let's Work Together</span>
           </a>
 
           {/* Mobile Hamburger Toggle Button */}
@@ -140,7 +140,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, isDark, toggleThe
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="fixed inset-0 top-[68px] z-30 lg:hidden bg-dark-bg/95 dark:bg-dark-bg/95 backdrop-blur-2xl p-6 flex flex-col justify-between overflow-y-auto border-t border-white/10"
+            className="fixed inset-0 top-[68px] z-30 lg:hidden bg-dark-bg/97 dark:bg-dark-bg/97 backdrop-blur-2xl p-6 flex flex-col justify-between overflow-y-auto border-t border-white/8"
           >
             <div className="flex flex-col gap-2 pt-4">
               <span className="text-[11px] font-mono uppercase tracking-widest text-slate-500 mb-2">
@@ -158,12 +158,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, isDark, toggleThe
                     onClick={() => setMobileMenuOpen(false)}
                     className={`flex items-center justify-between p-3.5 rounded-xl text-base font-medium transition-colors ${
                       isActive
-                        ? 'bg-brand-cyan/15 text-brand-cyan font-semibold border border-brand-cyan/30'
+                        ? 'bg-brand-burgundy/15 text-brand-burgundy font-semibold border border-brand-burgundy/30'
                         : 'text-slate-200 hover:bg-white/5'
                     }`}
                   >
                     <span>{link.label}</span>
-                    {isActive && <Sparkles className="w-4 h-4 text-brand-cyan" />}
+                    {isActive && <Sparkles className="w-4 h-4 text-brand-burgundy" />}
                   </motion.a>
                 );
               })}
@@ -179,11 +179,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, isDark, toggleThe
                 Download Resume (PDF)
               </a>
               <a
-                href="#contact"
+                href="#inquiry"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-blue text-white font-semibold text-sm shadow-lg shadow-brand-cyan/25"
+                className="w-full text-center py-3 rounded-xl bg-brand-burgundy text-white font-semibold text-sm shadow-lg shadow-brand-burgundy/25 hover:bg-brand-burgundy/90 transition-colors"
               >
-                Let's Connect
+                Start a Project
               </a>
             </div>
           </motion.div>

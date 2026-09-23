@@ -4,11 +4,11 @@ import { Brain, Cpu, Workflow, BarChart3, Factory, CheckCircle2 } from 'lucide-r
 import { careerPillars, personalInfo } from '../data/profile';
 
 const iconMap: Record<string, React.ReactNode> = {
-  Brain: <Brain className="w-5 h-5 text-brand-cyan" />,
-  Cpu: <Cpu className="w-5 h-5 text-brand-blue" />,
-  Workflow: <Workflow className="w-5 h-5 text-brand-violet" />,
-  BarChart3: <BarChart3 className="w-5 h-5 text-emerald-400" />,
-  Factory: <Factory className="w-5 h-5 text-amber-400" />,
+  Brain: <Brain className="w-5 h-5 text-brand-burgundy" />,
+  Cpu: <Cpu className="w-5 h-5 text-brand-slate" />,
+  Workflow: <Workflow className="w-5 h-5 text-brand-navy dark:text-brand-warm-gray" />,
+  BarChart3: <BarChart3 className="w-5 h-5 text-brand-charcoal dark:text-slate-300" />,
+  Factory: <Factory className="w-5 h-5 text-brand-slate" />,
 };
 
 export const About: React.FC = () => {
@@ -16,13 +16,13 @@ export const About: React.FC = () => {
     <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Section Header Tag */}
       <div className="flex items-center gap-2 mb-3">
-        <span className="font-mono text-xs text-brand-cyan uppercase tracking-widest">
+        <span className="font-mono text-xs text-brand-burgundy uppercase tracking-widest">
           01 // Professional Profile
         </span>
-        <div className="h-[1px] flex-1 max-w-[80px] bg-brand-cyan/30" />
+        <div className="h-[1px] flex-1 max-w-[80px] bg-brand-burgundy/30" />
       </div>
 
-      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-slate-900 dark:text-white tracking-tight mb-12">
+      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-slate-900 dark:text-brand-warm-gray tracking-tight mb-12">
         Where Modern AI Engineering <br className="hidden sm:inline" />
         Meets Operational Reality.
       </h2>
@@ -38,7 +38,7 @@ export const About: React.FC = () => {
           className="lg:col-span-5 flex flex-col gap-6"
         >
           <div className="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden">
-            <div className="text-xs font-mono uppercase tracking-wider text-brand-cyan mb-3">
+            <div className="text-xs font-mono uppercase tracking-wider text-brand-burgundy mb-3">
               Executive Summary
             </div>
 
@@ -48,15 +48,15 @@ export const About: React.FC = () => {
 
             <div className="mt-8 pt-6 border-t border-slate-200 dark:border-white/10 flex flex-col gap-3 text-sm text-slate-600 dark:text-slate-300">
               <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-brand-burgundy shrink-0 mt-0.5" />
                 <span>Specialized in LLM integration, prompt engineering, and conversational chatbot systems.</span>
               </div>
               <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-                <span>6+ years orchestrating high-volume industrial printing production, WIP tracking & ERP data.</span>
+                <CheckCircle2 className="w-4 h-4 text-brand-burgundy shrink-0 mt-0.5" />
+                <span>6+ years orchestrating high-volume industrial printing production, WIP tracking &amp; ERP data.</span>
               </div>
               <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-brand-burgundy shrink-0 mt-0.5" />
                 <span>End-to-end data analytics translating raw operational metrics into actionable BI dashboards.</span>
               </div>
             </div>
@@ -84,10 +84,10 @@ export const About: React.FC = () => {
                   <span className="text-[11px] font-mono text-slate-400">0{idx + 1}</span>
                 </div>
 
-                <h3 className="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-brand-cyan transition-colors">
+                <h3 className="font-display font-bold text-base text-slate-900 dark:text-brand-warm-gray group-hover:text-brand-burgundy transition-colors">
                   {pillar.title}
                 </h3>
-                <h4 className="text-xs font-mono text-brand-blue dark:text-brand-cyan/80 mb-2">
+                <h4 className="text-xs font-mono text-brand-slate mb-2">
                   {pillar.subtitle}
                 </h4>
 

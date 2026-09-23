@@ -14,6 +14,7 @@ import { Skills } from './sections/Skills';
 import { TechOrbit } from './sections/TechOrbit';
 import { Education } from './sections/Education';
 import { Certifications } from './sections/Certifications';
+import { Inquiry } from './sections/Inquiry';
 import { Contact } from './sections/Contact';
 import { Footer } from './components/Footer';
 
@@ -25,6 +26,7 @@ const sectionIds = [
   'skills',
   'education',
   'certifications',
+  'inquiry',
   'contact',
 ];
 
@@ -34,7 +36,7 @@ export function App() {
   const activeSection = useScrollSpy(sectionIds, 120);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 selection:bg-brand-cyan/20 selection:text-brand-cyan relative font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-slate-900 dark:text-brand-warm-gray selection:bg-brand-burgundy/20 selection:text-brand-burgundy relative font-sans transition-colors duration-300">
       {/* Short sleek entrance loader */}
       {loading && <Loader onComplete={() => setLoading(false)} />}
 
@@ -64,6 +66,7 @@ export function App() {
         <TechOrbit />
         <Education />
         <Certifications />
+        <Inquiry />
         <Contact />
       </main>
 

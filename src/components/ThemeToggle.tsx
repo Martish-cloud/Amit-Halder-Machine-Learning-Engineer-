@@ -11,7 +11,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ isDark, toggleTheme })
   return (
     <button
       onClick={toggleTheme}
-      className="relative p-2.5 rounded-xl bg-white/5 dark:bg-white/5 border border-slate-200/80 dark:border-white/10 hover:border-brand-cyan/50 text-slate-700 dark:text-slate-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+      className="relative p-2.5 rounded-xl bg-white/5 dark:bg-white/5 border border-slate-200/80 dark:border-white/10 hover:border-brand-burgundy/50 text-slate-700 dark:text-slate-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-burgundy"
       aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
       title={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
     >
@@ -39,7 +39,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ isDark, toggleTheme })
           transition={{ duration: 0.25 }}
           className="absolute inset-0 flex items-center justify-center"
         >
-          <Moon className="w-5 h-5 text-brand-cyan" />
+          <Moon className="w-5 h-5 text-brand-slate" />
         </motion.div>
       </div>
     </button>
