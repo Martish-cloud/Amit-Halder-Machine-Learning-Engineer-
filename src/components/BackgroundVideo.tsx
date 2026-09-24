@@ -13,13 +13,13 @@ export const BackgroundVideo: React.FC = () => {
         muted
         playsInline
         preload="auto"
-        className="w-full h-full object-cover object-center filter blur-[1.5px] scale-[1.01] transform-gpu opacity-75 dark:opacity-70"
+        className="w-full h-full object-cover object-center filter blur-[1.5px] scale-[1.01] transform-gpu opacity-85"
       >
         <source src="/background/Meaow.mp4" type="video/mp4" />
       </video>
 
       {/* Subtle atmospheric tint to maintain readability while keeping the video clean and visible */}
-      <div className="absolute inset-0 bg-[#0e1218]/25 transition-colors duration-300" />
+      <div className="absolute inset-0 bg-[#0e1218]/15 transition-colors duration-300" />
     </div>
   );
 };
