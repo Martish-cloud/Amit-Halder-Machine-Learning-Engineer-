@@ -330,6 +330,20 @@ export const certifications: CertificationItem[] = [
     image: '/certificates/Prompt Engineering from IBM.jpeg',
   },
   {
+    id: 'cert-deloitte-analytics',
+    title: 'Data Analytics Job Simulation',
+    provider: 'Deloitte',
+    category: 'Data & Analytics',
+    image: '/certificates/Deloitte_Data_Analytics_Job_Simulation.jpg',
+  },
+  {
+    id: 'cert-ibm-python-101',
+    title: 'Python 101 for Data Science',
+    provider: 'IBM SkillsBuild',
+    category: 'Data & Analytics',
+    image: '/certificates/IBM_SkillsBuild_Python_101_for_Data_Science.jpg',
+  },
+  {
     id: 'cert-ibm-python-data',
     title: 'Python for Data Analysis',
     provider: 'IBM SkillsBuild',
@@ -351,6 +365,13 @@ export const certifications: CertificationItem[] = [
     image: '/certificates/Executive Diploma in Bussiness Adminitration_Uniathena (1).jpg',
   },
   {
+    id: 'cert-greatlearning-english',
+    title: 'Spoken English',
+    provider: 'Great Learning',
+    category: 'Productivity & Languages',
+    image: '/certificates/Spoken_English_Great_Learning.jpg',
+  },
+  {
     id: 'cert-simplilearn-english',
     title: 'Advance Spoken English',
     provider: 'Simplilearn',
@@ -363,18 +384,6 @@ export const certifications: CertificationItem[] = [
     provider: 'LearnTube.AI',
     category: 'Productivity & Languages',
     image: '/certificates/Time Management Certification.jpeg',
-  },
-  {
-    id: 'cert-deloitte-analytics',
-    title: 'Australia Data Analytics Job Simulation',
-    provider: 'Deloitte',
-    category: 'Data & Analytics',
-  },
-  {
-    id: 'cert-ibm-python-101',
-    title: 'Python 101 for Data Science',
-    provider: 'IBM',
-    category: 'Data & Analytics',
   },
   {
     id: 'cert-udemy-ml',
@@ -405,18 +414,6 @@ export const certifications: CertificationItem[] = [
     title: 'Davinci Resolve',
     provider: 'Tutedude',
     category: 'Automation & Dev',
-  },
-  {
-    id: 'cert-greatlearning-english',
-    title: 'Spoken English Certification',
-    provider: 'Great Learning',
-    category: 'Productivity & Languages',
-  },
-  {
-    id: 'cert-udemy-japanese',
-    title: 'Japanese Language',
-    provider: 'Udemy',
-    category: 'Productivity & Languages',
   },
 ];
 

@@ -29,6 +29,8 @@ const providerBadgeColor = (provider: string) => {
       return 'bg-brand-slate/10 text-brand-slate border-brand-slate/30 dark:bg-brand-slate/20 dark:text-brand-warm-gray';
     case 'Deloitte':
       return 'bg-brand-navy/10 text-brand-navy border-brand-navy/30 dark:bg-brand-slate/20 dark:text-brand-warm-gray';
+    case 'Great Learning':
+      return 'bg-sky-500/10 text-sky-700 dark:text-sky-300 border-sky-500/30';
     case 'Udemy':
       return 'bg-brand-charcoal/10 text-brand-charcoal border-brand-charcoal/30 dark:bg-white/5 dark:text-slate-300';
     case 'Simplilearn':
