@@ -150,40 +150,40 @@ export const Certifications: React.FC = () => {
       <div className="hidden md:block">
         <div className="book-perspective max-w-4xl mx-auto">
           {/* Book wrapper — two-page spread */}
-          <div className="relative flex rounded-2xl shadow-2xl shadow-brand-navy/30 overflow-hidden min-h-[500px] border border-slate-300/80 dark:border-white/10">
+          <div className="relative flex rounded-2xl shadow-2xl shadow-black/60 overflow-hidden min-h-[500px] border border-white/10">
 
             {/* LEFT COVER / SPINE */}
-            <div className="w-[36%] bg-gradient-to-br from-brand-navy via-brand-navy to-brand-charcoal flex flex-col items-center justify-between p-8 relative shrink-0">
+            <div className="w-[36%] bg-gradient-to-b from-[#0B0F17] via-[#101726] to-[#0A0E17] flex flex-col items-center justify-between p-8 relative shrink-0 border-r border-white/10">
               {/* Spine detail */}
-              <div className="absolute top-0 right-0 bottom-0 w-3 bg-gradient-to-r from-brand-charcoal/80 to-transparent" />
-              <div className="absolute inset-0 bg-tech-grid opacity-10" />
+              <div className="absolute top-0 right-0 bottom-0 w-3 bg-gradient-to-r from-black/60 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-tech-grid opacity-10 pointer-events-none" />
 
               <div className="relative z-10 flex flex-col items-center text-center gap-5 my-auto">
                 {/* Cover emblem */}
-                <div className="w-16 h-16 rounded-2xl bg-brand-burgundy/20 border border-brand-burgundy/40 flex items-center justify-center shadow-inner">
-                  <BookOpen className="w-8 h-8 text-brand-warm-gray" />
+                <div className="w-16 h-16 rounded-2xl bg-rose-950/40 border border-rose-500/40 flex items-center justify-center shadow-lg shadow-black/40">
+                  <BookOpen className="w-8 h-8 text-rose-300" />
                 </div>
 
                 <div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand-slate mb-1">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-rose-400 font-semibold mb-1">
                     Professional Dossier
                   </div>
-                  <h3 className="font-display font-extrabold text-2xl text-brand-warm-gray tracking-tight leading-tight">
+                  <h3 className="font-display font-extrabold text-2xl text-white tracking-tight leading-tight">
                     AMIT<br />HALDER
                   </h3>
-                  <div className="mt-2 h-[2px] w-12 bg-brand-burgundy mx-auto rounded-full" />
-                  <p className="mt-2.5 text-xs font-mono text-brand-slate leading-relaxed">
+                  <div className="mt-2 h-[2px] w-12 bg-rose-500 mx-auto rounded-full shadow-[0_0_8px_rgba(244,63,94,0.5)]" />
+                  <p className="mt-2.5 text-xs font-mono text-slate-300 leading-relaxed font-medium">
                     Certification Archive
                   </p>
                 </div>
 
                 {/* Category indicator */}
-                <div className="px-3 py-1.5 rounded-full bg-brand-burgundy/20 border border-brand-burgundy/40 text-[10px] font-mono text-brand-warm-gray/90 font-medium">
+                <div className="px-3 py-1.5 rounded-full bg-rose-950/40 border border-rose-500/40 text-[10px] font-mono text-rose-200 font-semibold shadow-sm">
                   {selectedCategory === 'All' ? 'All Credentials' : selectedCategory}
                 </div>
 
                 {/* Counter */}
-                <div className="text-[11px] font-mono text-brand-slate">
+                <div className="text-[11px] font-mono text-slate-300 font-semibold tracking-wider">
                   {String(currentIndex + 1).padStart(2, '0')} / {String(totalCerts).padStart(2, '0')}
                 </div>
               </div>
@@ -246,15 +246,15 @@ export const Certifications: React.FC = () => {
                       {currentCert.image ? (
                         <div
                           onClick={() => setModalCert(currentCert)}
-                          className="group relative cursor-pointer rounded-xl overflow-hidden border border-white/15 shadow-md hover:shadow-xl transition-all duration-300 max-h-44 sm:max-h-48 w-full max-w-sm flex items-center justify-center bg-black/40"
+                          className="group relative cursor-pointer rounded-2xl overflow-hidden border border-[#E7D7BE]/80 shadow-lg hover:shadow-2xl transition-all duration-300 max-h-48 sm:max-h-52 w-full max-w-sm flex items-center justify-center p-3.5 bg-[#FFF8E7]"
                         >
                           <img
                             src={currentCert.image}
                             alt={`${currentCert.title} certificate`}
                             loading="lazy"
-                            className="max-h-44 sm:max-h-48 w-full object-contain p-2 group-hover:scale-[1.02] transition-transform duration-300"
+                            className="max-h-40 sm:max-h-44 w-full object-contain rounded-lg shadow-sm group-hover:scale-[1.02] transition-transform duration-300"
                           />
-                          <div className="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                          <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
                             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-brand-burgundy text-white text-xs font-semibold shadow-lg border border-rose-500/30">
                               <Eye className="w-3.5 h-3.5 text-white" />
                               <span>View Certificate</span>
@@ -385,13 +385,13 @@ export const Certifications: React.FC = () => {
                 {currentCert.image && (
                   <div
                     onClick={() => setModalCert(currentCert)}
-                    className="relative rounded-xl overflow-hidden border border-white/15 bg-black/40 p-2 cursor-pointer flex items-center justify-center max-h-48"
+                    className="relative rounded-2xl overflow-hidden border border-[#E7D7BE]/80 bg-[#FFF8E7] p-3.5 cursor-pointer flex items-center justify-center max-h-52 shadow-md"
                   >
                     <img
                       src={currentCert.image}
                       alt={`${currentCert.title} certificate`}
                       loading="lazy"
-                      className="max-h-44 w-full object-contain rounded-lg"
+                      className="max-h-44 w-full object-contain rounded-lg shadow-sm"
                     />
                   </div>
                 )}
