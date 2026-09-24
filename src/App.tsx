@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useTheme } from './hooks/useTheme';
 import { useScrollSpy } from './hooks/useScrollSpy';
 import { Loader } from './components/Loader';
 import { BackgroundVideo } from './components/BackgroundVideo';
@@ -35,15 +34,14 @@ const sectionIds = [
 
 export function App() {
   const [loading, setLoading] = useState(true);
-  const { toggleTheme, isDark } = useTheme();
   const activeSection = useScrollSpy(sectionIds, 120);
 
   return (
-    <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-slate-900 dark:text-brand-warm-gray selection:bg-brand-burgundy/20 selection:text-brand-burgundy relative font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-dark-bg text-brand-warm-gray selection:bg-brand-burgundy/20 selection:text-brand-burgundy relative font-sans transition-colors duration-300">
       {/* Short sleek entrance loader */}
       {loading && <Loader onComplete={() => setLoading(false)} />}
 
-      {/* Global Fixed Background Video Layer (Fixed to viewport, 30% blur, non-blocking) */}
+      {/* Global Fixed Background Video Layer (Fixed to viewport, clean & non-blocking) */}
       <BackgroundVideo />
 
       {/* Ambient Reading Progress Bar */}
@@ -56,15 +54,11 @@ export function App() {
       <BackgroundGrid />
 
       {/* Floating Glass Navigation */}
-      <Navbar
-        activeSection={activeSection}
-        isDark={isDark}
-        toggleTheme={toggleTheme}
-      />
+      <Navbar activeSection={activeSection} />
 
       {/* Main Content Area */}
       <main className="relative z-10">
-        <Hero />
+        <Hero isLoaded={!loading} />
         <About />
         <CareerEvolution />
         <Experience />

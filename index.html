@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en" class="light">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="dark" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -45,19 +45,14 @@
       rel="stylesheet"
     />
 
-    <!-- Theme initialization script to prevent FOUC: Default Light Mode -->
+    <!-- Theme initialization: Always Dark Mode -->
     <script>
       (function () {
         try {
-          const theme = localStorage.getItem('ah_portfolio_theme');
-          if (theme === 'dark') {
-            document.documentElement.classList.remove('light');
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-          }
+          localStorage.removeItem('ah_portfolio_theme');
         } catch (e) {}
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
       })();
     </script>
 

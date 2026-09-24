@@ -19,7 +19,7 @@ export const BackgroundVideo: React.FC = () => {
       </video>
 
       {/* Subtle atmospheric tint to maintain readability while keeping the video clean and visible */}
-      <div className="absolute inset-0 bg-[#DAD6D3]/10 dark:bg-[#0e1218]/15 transition-colors duration-300" />
+      <div className="absolute inset-0 bg-[#0e1218]/25 transition-colors duration-300" />
     </div>
   );
 };
