@@ -4,7 +4,9 @@ export function useScrollSpy(sectionIds: string[], offset: number = 100): string
   const [activeId, setActiveId] = useState<string>(sectionIds[0] || '');
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const checkScroll = () => {
       const scrollPosition = window.scrollY + offset;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -25,8 +27,18 @@ export function useScrollSpy(sectionIds: string[], offset: number = 100): string
       }
     };
 
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          checkScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    checkScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [sectionIds, offset]);

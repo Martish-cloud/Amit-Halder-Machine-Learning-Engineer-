@@ -4,10 +4,12 @@ export type Theme = 'dark' | 'light';
 
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === 'undefined') return 'dark';
-    const saved = localStorage.getItem('ah_portfolio_theme') as Theme | null;
-    if (saved === 'dark' || saved === 'light') return saved;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark'; // Dark first by default
+    if (typeof window === 'undefined') return 'light';
+    try {
+      const saved = localStorage.getItem('ah_portfolio_theme') as Theme | null;
+      if (saved === 'dark' || saved === 'light') return saved;
+    } catch {}
+    return 'light'; // Default initial theme = Light
   });
 
   useEffect(() => {
@@ -19,21 +21,10 @@ export function useTheme() {
       root.classList.add('light');
       root.classList.remove('dark');
     }
-    localStorage.setItem('ah_portfolio_theme', theme);
+    try {
+      localStorage.setItem('ah_portfolio_theme', theme);
+    } catch {}
   }, [theme]);
-
-  // Listen to system changes if user hasn't explicitly set a preference
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e: MediaQueryListEvent) => {
-      const saved = localStorage.getItem('ah_portfolio_theme');
-      if (!saved) {
-        setTheme(e.matches ? 'dark' : 'light');
-      }
-    };
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));

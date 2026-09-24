@@ -61,14 +61,23 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, isDark, toggleThe
       }`}
     >
       <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Monogram & Name */}
+        {/* Brand Profile Identity & Name */}
         <a
           href="#home"
           className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-burgundy rounded-xl"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-burgundy/20 to-brand-navy/30 border border-brand-burgundy/30 flex items-center justify-center font-display font-bold text-sm tracking-wider text-slate-100 dark:text-white group-hover:border-brand-burgundy/70 transition-colors shadow-sm">
-            <span className="font-mono text-brand-burgundy dark:text-brand-warm-gray font-bold text-xs">AH</span>
-          </div>
+          <motion.div
+            initial={{ scale: 0.92, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="w-10 h-10 rounded-xl overflow-hidden border border-brand-burgundy/40 shadow-sm relative group-hover:border-brand-burgundy/80 transition-colors"
+          >
+            <img
+              src="/profile.jpeg"
+              alt="Amit Halder"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
           <div className="flex flex-col">
             <span className="font-display font-bold text-sm tracking-tight text-slate-900 dark:text-brand-warm-gray group-hover:text-brand-burgundy transition-colors">
               {personalInfo.name}

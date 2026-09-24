@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export const CustomCursor: React.FC = () => {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
   const [cursorState, setCursorState] = useState<'default' | 'pointer' | 'card'>('default');
-  const [isFinePointer, setIsFinePointer] = useState(false);
+  const [isFinePointer, setIsFinePointer] = useState<boolean>(() =>
+    typeof window !== 'undefined' ? window.matchMedia('(pointer: fine)').matches : false
+  );
+
+  // Motion values avoid triggering React component re-renders on mousemove
+  const mouseX = useMotionValue(-100);
+  const mouseY = useMotionValue(-100);
+
+  const dotX = useSpring(mouseX, { stiffness: 1200, damping: 50 });
+  const dotY = useSpring(mouseY, { stiffness: 1200, damping: 50 });
+
+  const ringX = useSpring(mouseX, { stiffness: 380, damping: 30 });
+  const ringY = useSpring(mouseY, { stiffness: 380, damping: 30 });
 
   useEffect(() => {
     // Only enable for desktop mice
     const fineCheck = window.matchMedia('(pointer: fine)');
-    setIsFinePointer(fineCheck.matches);
 
     const handlePointerChange = (e: MediaQueryListEvent) => {
       setIsFinePointer(e.matches);
@@ -17,7 +27,8 @@ export const CustomCursor: React.FC = () => {
     fineCheck.addEventListener('change', handlePointerChange);
 
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
 
       const target = e.target as HTMLElement | null;
       if (!target) return;
@@ -37,32 +48,36 @@ export const CustomCursor: React.FC = () => {
       fineCheck.removeEventListener('change', handlePointerChange);
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [mouseX, mouseY]);
 
   if (!isFinePointer) return null;
 
   return (
     <>
-      {/* Center dot */}
+      {/* Center dot - burgundy accent */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-brand-cyan pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-brand-burgundy pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"
+        style={{ x: dotX, y: dotY }}
         animate={{
-          x: position.x,
-          y: position.y,
           scale: cursorState === 'pointer' ? 0.5 : 1,
         }}
         transition={{ type: 'spring', stiffness: 1000, damping: 50 }}
       />
-      {/* Outer tracking ring */}
+      {/* Outer tracking ring - burgundy/slate accent */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full border border-brand-cyan/60 pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"
+        className="fixed top-0 left-0 rounded-full border pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2"
+        style={{ x: ringX, y: ringY }}
         animate={{
-          x: position.x,
-          y: position.y,
           width: cursorState === 'pointer' ? 44 : cursorState === 'card' ? 36 : 24,
           height: cursorState === 'pointer' ? 44 : cursorState === 'card' ? 36 : 24,
-          backgroundColor: cursorState === 'pointer' ? 'rgba(6, 182, 212, 0.15)' : 'rgba(6, 182, 212, 0.03)',
-          borderColor: cursorState === 'pointer' ? '#06b6d4' : 'rgba(6, 182, 212, 0.4)',
+          backgroundColor:
+            cursorState === 'pointer'
+              ? 'rgba(101, 23, 36, 0.12)'
+              : 'rgba(68, 87, 94, 0.05)',
+          borderColor:
+            cursorState === 'pointer'
+              ? 'rgba(101, 23, 36, 0.7)'
+              : 'rgba(68, 87, 94, 0.35)',
         }}
         transition={{ type: 'spring', stiffness: 350, damping: 28 }}
       />

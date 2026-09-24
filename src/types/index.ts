@@ -27,8 +27,14 @@ export interface CertificationItem {
   id: string;
   title: string;
   provider: string;
-  category: 'AI & GenAI' | 'Data & Analytics' | 'Automation & Dev' | 'Productivity & Languages';
+  category:
+    | 'AI & GenAI'
+    | 'Data & Analytics'
+    | 'Automation & Dev'
+    | 'Productivity & Languages'
+    | 'Business / Management';
   year?: string;
+  image?: string;
 }
 
 export interface EducationItem {

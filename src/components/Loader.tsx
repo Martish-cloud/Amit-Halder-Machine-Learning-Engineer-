@@ -40,38 +40,19 @@ export const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
           {/* Ambient center glow — burgundy, restrained */}
           <div className="absolute w-72 h-72 rounded-full bg-brand-burgundy/8 blur-[100px] pointer-events-none" />
 
-          {/* Monogram Symbol */}
+          {/* Profile Identity Emblem with Subtle Fade-in + Scale/Pop Animation */}
           <div className="relative mb-6">
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.4 }}
-              className="w-20 h-20 rounded-2xl bg-dark-surface/80 border border-white/10 flex items-center justify-center shadow-2xl backdrop-blur-xl"
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              className="w-20 h-20 rounded-2xl p-1 bg-gradient-to-br from-brand-burgundy/40 via-brand-navy/60 to-brand-slate/40 border border-brand-burgundy/40 shadow-2xl backdrop-blur-xl relative overflow-hidden"
             >
-              <svg viewBox="0 0 64 64" className="w-12 h-12">
-                <defs>
-                  <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#651724" />
-                    <stop offset="100%" stopColor="#44575E" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M16 46 L27 18 L32 30 L21 30"
-                  fill="none"
-                  stroke="url(#loaderGrad)"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M37 18 L37 46 M37 32 L49 32 M49 18 L49 46"
-                  fill="none"
-                  stroke="url(#loaderGrad)"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <img
+                src="/profile.jpeg"
+                alt="Amit Halder"
+                className="w-full h-full object-cover rounded-xl"
+              />
             </motion.div>
           </div>
 

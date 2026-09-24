@@ -1,10 +1,13 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark light" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <!-- Primary Meta Tags -->
     <title>Amit Halder | GenAI Developer & Machine Learning Engineer</title>
@@ -23,7 +26,7 @@
       property="og:description"
       content="Bridging AI systems with real-world business operations. Specialized in LLM integration, prompt engineering, and AI workflow automation."
     />
-    <meta property="og:image" content="/favicon.svg" />
+    <meta property="og:image" content="/profile.jpeg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -32,7 +35,7 @@
       property="twitter:description"
       content="Bridging AI systems with real-world business operations. Specialized in LLM integration, prompt engineering, and AI workflow automation."
     />
-    <meta property="twitter:image" content="/favicon.svg" />
+    <meta property="twitter:image" content="/profile.jpeg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,18 +45,17 @@
       rel="stylesheet"
     />
 
-    <!-- Theme initialization script to prevent FOUC -->
+    <!-- Theme initialization script to prevent FOUC: Default Light Mode -->
     <script>
       (function () {
         try {
           const theme = localStorage.getItem('ah_portfolio_theme');
-          const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (theme === 'light' || (!theme && !systemPrefersDark)) {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-          } else {
+          if (theme === 'dark') {
             document.documentElement.classList.remove('light');
             document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
           }
         } catch (e) {}
       })();
@@ -74,9 +76,9 @@
         },
         "email": "askfor.amithalder@gmail.com",
         "telephone": "+917003660883",
-        "url": "https://linkedin.com/in/amit-halder",
+        "url": "https://www.linkedin.com/in/amit-halder-/",
         "sameAs": [
-          "https://linkedin.com/in/amit-halder"
+          "https://www.linkedin.com/in/amit-halder-/"
         ],
         "knowsAbout": [
           "Generative AI",
@@ -92,7 +94,7 @@
       }
     </script>
   </head>
-  <body class="bg-dark-bg text-slate-100 antialiased selection:bg-brand-cyan/20 selection:text-brand-cyan transition-colors duration-300">
+  <body class="bg-light-bg text-slate-900 dark:bg-dark-bg dark:text-brand-warm-gray antialiased selection:bg-brand-burgundy/20 selection:text-brand-burgundy transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

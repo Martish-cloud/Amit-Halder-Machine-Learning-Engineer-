@@ -21,7 +21,7 @@ const inquiryTypes = [
   'Power BI Dashboard',
   'AI / GenAI Development',
   'Machine Learning',
-  'Automation / n8n',
+  'AI Automation / n8n',
   'UI/UX Design',
   'Other',
 ];
@@ -67,12 +67,13 @@ export const Inquiry: React.FC = () => {
     if (!form.name.trim()) newErrors.name = 'Full name is required.';
     if (!form.email.trim()) {
       newErrors.email = 'Email address is required.';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
       newErrors.email = 'Please enter a valid email address.';
     }
-    if (!form.inquiryType) newErrors.inquiryType = 'Please select an inquiry type.';
-    if (!form.message.trim() || form.message.trim().length < 20) {
-      newErrors.message = 'Please provide at least 20 characters of project details.';
+    if (!form.inquiryType) newErrors.inquiryType = 'Please select a service / inquiry type.';
+    if (!form.budget) newErrors.budget = 'Please select a budget range.';
+    if (!form.message.trim() || form.message.trim().length < 10) {
+      newErrors.message = 'Please provide project details (minimum 10 characters).';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -98,30 +99,53 @@ export const Inquiry: React.FC = () => {
     const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
     if (!accessKey) {
-      console.warn('VITE_WEB3FORMS_ACCESS_KEY is not set. Form submission skipped.');
+      console.warn('VITE_WEB3FORMS_ACCESS_KEY is not configured in environment.');
       setFormState('error');
       return;
     }
 
     try {
-      const payload = {
-        access_key: accessKey,
-        name: form.name,
-        email: form.email,
-        subject: `Portfolio Inquiry: ${form.inquiryType} — ${form.name}`,
-        message: `
-Name: ${form.name}
-Email: ${form.email}
-Company/Org: ${form.company || 'Not provided'}
-Inquiry Type: ${form.inquiryType}
-Budget: ${form.budget || 'Not specified'}
-Preferred Contact: ${form.preferredContact || 'Not specified'}
+      const emailBody = `
+--------------------------------
+NEW PORTFOLIO PROJECT INQUIRY
+--------------------------------
+
+Full Name:
+${form.name.trim()}
+
+Email:
+${form.email.trim()}
+
+Company / Organization:
+${form.company.trim() || 'Not specified'}
+
+Service:
+${form.inquiryType}
+
+Budget:
+${form.budget}
+
+Preferred Contact Method:
+${form.preferredContact || 'Not specified'}
 
 Project Details:
-${form.message}
-        `.trim(),
+${form.message.trim()}
+
+--------------------------------
+Submitted via:
+Amit Halder Portfolio
+--------------------------------
+`.trim();
+
+      const payload = {
+        access_key: accessKey,
+        name: form.name.trim(),
+        email: form.email.trim(),
+        replyto: form.email.trim(),
+        from_name: form.name.trim(),
+        subject: `New Project Inquiry — ${form.inquiryType} — ${form.budget}`,
+        message: emailBody,
         botcheck: form.botcheck,
-        from_name: 'Amit Halder Portfolio',
       };
 
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -136,9 +160,11 @@ ${form.message}
         setFormState('success');
         setForm(initialForm);
       } else {
+        console.error('Web3Forms submission error:', result);
         setFormState('error');
       }
-    } catch {
+    } catch (err) {
+      console.error('Submission request failed:', err);
       setFormState('error');
     }
   };
@@ -256,10 +282,10 @@ ${form.message}
                   <CheckCircle2 className="w-8 h-8 text-brand-burgundy" />
                 </div>
                 <h3 className="font-display font-bold text-xl text-slate-900 dark:text-brand-warm-gray">
-                  Inquiry Received!
+                  Thank you! Your inquiry has been received successfully.
                 </h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300 max-w-sm leading-relaxed">
-                  Thank you! Your inquiry has been received. I&apos;ll get back to you as soon as possible.
+                  Your message has been sent to Amit Halder.
                 </p>
                 <button
                   onClick={() => setFormState('idle')}
@@ -281,10 +307,10 @@ ${form.message}
                     className="flex items-start gap-3 p-4 rounded-xl bg-red-500/10 border border-red-400/30 text-red-500 dark:text-red-400 text-sm"
                   >
                     <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
-                    <span>
-                      Something went wrong while sending your inquiry. Please try again or contact me
-                      directly by email.
-                    </span>
+                    <div>
+                      <p className="font-semibold">Something went wrong while sending your inquiry.</p>
+                      <p className="text-xs mt-0.5">Please try again or contact me directly at askfor.amithalder@gmail.com</p>
+                    </div>
                   </motion.div>
                 )}
 
@@ -396,7 +422,7 @@ ${form.message}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="inquiry-budget" className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                      Budget Range <span className="text-slate-400 text-[10px]">(optional)</span>
+                      Budget Range <span className="text-brand-burgundy">*</span>
                     </label>
                     <select
                       id="inquiry-budget"
@@ -404,15 +430,22 @@ ${form.message}
                       value={form.budget}
                       onChange={handleChange}
                       className={`${inputClass('budget')} cursor-pointer`}
+                      aria-required="true"
+                      aria-describedby={errors.budget ? 'budget-error' : undefined}
                     >
-                      <option value="">Not specified</option>
-                      <option value="Under ₹25,000">Under ₹25,000</option>
-                      <option value="₹25,000 – ₹75,000">₹25,000 – ₹75,000</option>
+                      <option value="" disabled>Select budget range...</option>
+                      <option value="Under ₹50,000">Under ₹50,000</option>
+                      <option value="₹50,000 – ₹75,000">₹50,000 – ₹75,000</option>
                       <option value="₹75,000 – ₹2,00,000">₹75,000 – ₹2,00,000</option>
                       <option value="₹2,00,000+">₹2,00,000+</option>
                       <option value="Hourly / Consulting">Hourly / Consulting</option>
                       <option value="Let's discuss">Let&apos;s discuss</option>
                     </select>
+                    {errors.budget && (
+                      <span id="budget-error" className="text-xs text-red-500 font-mono" role="alert">
+                        {errors.budget}
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex flex-col gap-1.5">

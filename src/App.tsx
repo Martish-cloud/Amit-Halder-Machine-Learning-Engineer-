@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTheme } from './hooks/useTheme';
 import { useScrollSpy } from './hooks/useScrollSpy';
 import { Loader } from './components/Loader';
+import { BackgroundVideo } from './components/BackgroundVideo';
 import { ScrollProgress } from './components/ScrollProgress';
 import { BackgroundGrid } from './components/BackgroundGrid';
 import { CustomCursor } from './components/CustomCursor';
@@ -14,6 +15,7 @@ import { Skills } from './sections/Skills';
 import { TechOrbit } from './sections/TechOrbit';
 import { Education } from './sections/Education';
 import { Certifications } from './sections/Certifications';
+import { PersonalDocuments } from './sections/PersonalDocuments';
 import { Inquiry } from './sections/Inquiry';
 import { Contact } from './sections/Contact';
 import { Footer } from './components/Footer';
@@ -26,6 +28,7 @@ const sectionIds = [
   'skills',
   'education',
   'certifications',
+  'documents',
   'inquiry',
   'contact',
 ];
@@ -39,6 +42,9 @@ export function App() {
     <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-slate-900 dark:text-brand-warm-gray selection:bg-brand-burgundy/20 selection:text-brand-burgundy relative font-sans transition-colors duration-300">
       {/* Short sleek entrance loader */}
       {loading && <Loader onComplete={() => setLoading(false)} />}
+
+      {/* Global Fixed Background Video Layer (Fixed to viewport, 30% blur, non-blocking) */}
+      <BackgroundVideo />
 
       {/* Ambient Reading Progress Bar */}
       <ScrollProgress />
@@ -66,6 +72,7 @@ export function App() {
         <TechOrbit />
         <Education />
         <Certifications />
+        <PersonalDocuments />
         <Inquiry />
         <Contact />
       </main>
