@@ -48,7 +48,7 @@ function TypewriterName({ text, isReady = true }: { text: string; isReady?: bool
   if (prefersReduced) {
     return (
       <span className="inline-flex items-baseline relative">
-        <span className="tracking-tight text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+        <span className="tracking-tight bg-gradient-to-r from-[#FFFFFF] via-[#E8F5E9] to-[#14532D] bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
           {text}
         </span>
       </span>
@@ -60,7 +60,10 @@ function TypewriterName({ text, isReady = true }: { text: string; isReady?: bool
   return (
     <span className="inline-flex items-baseline relative">
       <span className="sr-only">{text}</span>
-      <span aria-hidden="true" className="tracking-tight text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+      <span
+        aria-hidden="true"
+        className="tracking-tight bg-gradient-to-r from-[#FFFFFF] via-[#E8F5E9] to-[#14532D] bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
+      >
         {typedText}
       </span>
       {/* Blinking Cursor: stays active and continues blinking after typing finishes */}
@@ -164,7 +167,7 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-4 max-w-2xl text-base sm:text-lg font-mono text-brand-warm-gray font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
+          className="mt-4 max-w-2xl text-base sm:text-lg font-mono text-[#9DDCFF] font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
         >
           &ldquo;{personalInfo.tagline}&rdquo;
         </motion.div>
