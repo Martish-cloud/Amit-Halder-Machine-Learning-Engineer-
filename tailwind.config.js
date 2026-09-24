@@ -23,18 +23,18 @@ export default {
           'border-hover': 'rgba(29, 41, 55, 0.18)',
         },
         brand: {
-          // New premium palette
-          'warm-gray': '#DAD6D3',
-          slate: '#44575E',
-          navy: '#1D2937',
-          burgundy: '#651724',
-          charcoal: '#3D3B3C',
+          // Premium high-contrast dark palette
+          'warm-gray': '#F1F5F9',
+          slate: '#94A3B8',
+          navy: '#38BDF8',
+          burgundy: '#9E1C32',
+          charcoal: '#CBD5E1',
           // Aliases for readability in components
-          accent: '#651724',       // burgundy — CTAs, highlights
-          secondary: '#44575E',   // slate blue gray — secondary text, decorative
-          deep: '#1D2937',        // deep navy — backgrounds, covers
-          surface: '#DAD6D3',     // warm gray — light page surfaces
-          muted: '#3D3B3C',       // charcoal — borders, muted text
+          accent: '#9E1C32',       // vibrant luxury burgundy — CTAs, highlights
+          secondary: '#94A3B8',   // light slate cool gray — secondary text, decorative
+          deep: '#0E1218',        // deep dark navy
+          surface: '#141A22',     // dark surface
+          muted: '#64748B',       // readable muted slate
         }
       },
       fontFamily: {

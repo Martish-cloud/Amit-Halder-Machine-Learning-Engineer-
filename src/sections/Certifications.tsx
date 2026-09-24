@@ -19,26 +19,26 @@ type Direction = 'next' | 'prev';
 const providerBadgeColor = (provider: string) => {
   switch (provider) {
     case 'Anthropic':
-      return 'bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/30';
+      return 'bg-amber-500/15 text-amber-300 border-amber-500/40';
     case 'Qualcomm':
-      return 'bg-blue-600/10 text-blue-700 dark:text-blue-300 border-blue-600/30';
+      return 'bg-blue-500/15 text-blue-300 border-blue-500/40';
     case 'UniAthena':
-      return 'bg-purple-600/10 text-purple-700 dark:text-purple-300 border-purple-600/30';
+      return 'bg-purple-500/15 text-purple-300 border-purple-500/40';
     case 'IBM':
     case 'IBM SkillsBuild':
-      return 'bg-brand-slate/10 text-brand-slate border-brand-slate/30 dark:bg-brand-slate/20 dark:text-brand-warm-gray';
+      return 'bg-sky-500/15 text-sky-300 border-sky-500/40';
     case 'Deloitte':
-      return 'bg-brand-navy/10 text-brand-navy border-brand-navy/30 dark:bg-brand-slate/20 dark:text-brand-warm-gray';
+      return 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40';
     case 'Great Learning':
-      return 'bg-sky-500/10 text-sky-700 dark:text-sky-300 border-sky-500/30';
+      return 'bg-cyan-500/15 text-cyan-300 border-cyan-500/40';
     case 'Udemy':
-      return 'bg-brand-charcoal/10 text-brand-charcoal border-brand-charcoal/30 dark:bg-white/5 dark:text-slate-300';
+      return 'bg-indigo-500/15 text-indigo-300 border-indigo-500/40';
     case 'Simplilearn':
-      return 'bg-brand-burgundy/10 text-brand-burgundy border-brand-burgundy/30';
+      return 'bg-rose-500/15 text-rose-300 border-rose-500/40';
     case 'LearnTube.AI':
-      return 'bg-emerald-600/10 text-emerald-700 dark:text-emerald-300 border-emerald-600/30';
+      return 'bg-teal-500/15 text-teal-300 border-teal-500/40';
     default:
-      return 'bg-slate-100 text-slate-600 border-slate-300 dark:bg-white/5 dark:text-slate-400 dark:border-white/10';
+      return 'bg-white/10 text-slate-200 border-white/20';
   }
 };
 
@@ -111,32 +111,32 @@ export const Certifications: React.FC = () => {
     <section id="certifications" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Section Header */}
       <div className="flex items-center gap-2 mb-3">
-        <span className="font-mono text-xs text-brand-burgundy uppercase tracking-widest">
+        <span className="font-mono text-xs text-rose-400 uppercase tracking-widest font-semibold">
           06 // Professional Credentials
         </span>
-        <div className="h-[1px] flex-1 max-w-[80px] bg-brand-burgundy/30" />
+        <div className="h-[1px] flex-1 max-w-[80px] bg-rose-500/30" />
       </div>
 
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
         <div>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 dark:text-brand-warm-gray tracking-tight">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
             Verified Certifications
           </h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 max-w-xl font-sans">
+          <p className="mt-2 text-sm text-slate-300 max-w-xl font-sans">
             Formal technical certifications issued by Qualcomm, Anthropic, IBM, Deloitte, Simplilearn, UniAthena, and partner institutions.
           </p>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl glass-panel border border-slate-200 dark:border-white/10 text-xs">
+        <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl glass-panel border border-white/15 bg-slate-900/60 text-xs">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => handleCategoryChange(category)}
-              className={`px-3 py-1.5 rounded-xl transition-all font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-burgundy ${
+              className={`px-3 py-1.5 rounded-xl transition-all font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 ${
                 selectedCategory === category
-                  ? 'bg-brand-burgundy text-white shadow-sm font-semibold'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-brand-burgundy text-white shadow-sm font-semibold border border-rose-500/40'
+                  : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
               {category}
@@ -230,13 +230,13 @@ export const Certifications: React.FC = () => {
                       </div>
 
                       {/* Certificate title */}
-                      <h3 className="font-display font-bold text-xl sm:text-2xl text-brand-navy dark:text-brand-warm-gray leading-tight mb-3">
+                      <h3 className="font-display font-bold text-xl sm:text-2xl text-white leading-tight mb-3">
                         {currentCert.title}
                       </h3>
 
                       {/* Credential verified status */}
-                      <div className="flex items-center gap-2 text-xs text-brand-burgundy font-medium mb-3">
-                        <CheckCircle2 className="w-4 h-4 shrink-0" />
+                      <div className="flex items-center gap-2 text-xs text-rose-400 font-semibold mb-3">
+                        <CheckCircle2 className="w-4 h-4 text-rose-400 shrink-0" />
                         <span>Verified Credential · Issued by {currentCert.provider}</span>
                       </div>
                     </div>
@@ -246,7 +246,7 @@ export const Certifications: React.FC = () => {
                       {currentCert.image ? (
                         <div
                           onClick={() => setModalCert(currentCert)}
-                          className="group relative cursor-pointer rounded-xl overflow-hidden border border-slate-300 dark:border-white/10 shadow-md hover:shadow-xl transition-all duration-300 max-h-44 sm:max-h-48 w-full max-w-sm flex items-center justify-center bg-white/60 dark:bg-black/30"
+                          className="group relative cursor-pointer rounded-xl overflow-hidden border border-white/15 shadow-md hover:shadow-xl transition-all duration-300 max-h-44 sm:max-h-48 w-full max-w-sm flex items-center justify-center bg-black/40"
                         >
                           <img
                             src={currentCert.image}
@@ -254,17 +254,17 @@ export const Certifications: React.FC = () => {
                             loading="lazy"
                             className="max-h-44 sm:max-h-48 w-full object-contain p-2 group-hover:scale-[1.02] transition-transform duration-300"
                           />
-                          <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-burgundy text-white text-xs font-semibold shadow-lg">
-                              <Eye className="w-3.5 h-3.5" />
+                          <div className="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-brand-burgundy text-white text-xs font-semibold shadow-lg border border-rose-500/30">
+                              <Eye className="w-3.5 h-3.5 text-white" />
                               <span>View Certificate</span>
                             </span>
                           </div>
                         </div>
                       ) : (
-                        <div className="w-full max-w-sm p-6 rounded-xl border border-dashed border-slate-300 dark:border-white/15 bg-white/40 dark:bg-white/5 flex flex-col items-center justify-center text-center">
-                          <Shield className="w-8 h-8 text-brand-slate mb-2" />
-                          <span className="text-xs font-mono text-slate-600 dark:text-slate-300">
+                        <div className="w-full max-w-sm p-6 rounded-xl border border-dashed border-white/15 bg-white/5 flex flex-col items-center justify-center text-center">
+                          <Shield className="w-8 h-8 text-slate-400 mb-2" />
+                          <span className="text-xs font-mono text-slate-300">
                             Verified Completion Record
                           </span>
                         </div>
@@ -275,21 +275,21 @@ export const Certifications: React.FC = () => {
                         <button
                           type="button"
                           onClick={() => setModalCert(currentCert)}
-                          className="mt-3.5 inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-brand-burgundy text-white font-semibold text-xs shadow-md shadow-brand-burgundy/25 hover:bg-brand-burgundy/90 hover:scale-[1.02] active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-burgundy"
+                          className="mt-3.5 inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-brand-burgundy hover:bg-rose-700 text-white font-semibold text-xs shadow-md shadow-brand-burgundy/30 hover:scale-[1.02] active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 border border-rose-500/30"
                           aria-label={`View full certificate for ${currentCert.title}`}
                         >
-                          <Eye className="w-3.5 h-3.5" />
+                          <Eye className="w-3.5 h-3.5 text-white" />
                           <span>View Full Certificate</span>
                         </button>
                       )}
                     </div>
 
                     {/* Bottom rule */}
-                    <div className="pt-4 border-t border-brand-charcoal/20 dark:border-white/10 flex items-center justify-between text-xs font-mono text-brand-charcoal/70 dark:text-slate-400">
-                      <span className="text-[10px] uppercase tracking-wider">
+                    <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-300">
+                      <span className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">
                         Amit Halder Portfolio
                       </span>
-                      <span>
+                      <span className="font-semibold text-slate-200">
                         {String(currentIndex + 1).padStart(2, '0')} / {String(totalCerts).padStart(2, '0')}
                       </span>
                     </div>
@@ -304,7 +304,7 @@ export const Certifications: React.FC = () => {
             <button
               onClick={goPrev}
               disabled={currentIndex === 0}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-navy dark:bg-white/5 border border-brand-slate/30 dark:border-white/10 text-brand-warm-gray disabled:opacity-30 disabled:cursor-not-allowed hover:border-brand-burgundy/50 hover:bg-brand-navy/80 transition-all text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-burgundy"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800/80 border border-white/15 text-slate-200 disabled:opacity-30 disabled:cursor-not-allowed hover:border-rose-500/50 hover:bg-slate-800 transition-all text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
               aria-label="Previous certificate"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -322,8 +322,8 @@ export const Certifications: React.FC = () => {
                   }}
                   className={`transition-all rounded-full focus:outline-none ${
                     i === currentIndex
-                      ? 'w-6 h-2 bg-brand-burgundy'
-                      : 'w-2 h-2 bg-brand-slate/30 hover:bg-brand-slate/60'
+                      ? 'w-6 h-2 bg-rose-500'
+                      : 'w-2 h-2 bg-slate-700 hover:bg-slate-500'
                   }`}
                   aria-label={`Go to certificate ${i + 1}`}
                 />
@@ -333,7 +333,7 @@ export const Certifications: React.FC = () => {
             <button
               onClick={goNext}
               disabled={currentIndex === totalCerts - 1}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-navy dark:bg-white/5 border border-brand-slate/30 dark:border-white/10 text-brand-warm-gray disabled:opacity-30 disabled:cursor-not-allowed hover:border-brand-burgundy/50 hover:bg-brand-navy/80 transition-all text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-burgundy"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800/80 border border-white/15 text-slate-200 disabled:opacity-30 disabled:cursor-not-allowed hover:border-rose-500/50 hover:bg-slate-800 transition-all text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
               aria-label="Next certificate"
             >
               <span>Next</span>
@@ -360,7 +360,7 @@ export const Certifications: React.FC = () => {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="glass-card p-5 rounded-2xl flex flex-col gap-4"
+                className="glass-card p-5 rounded-2xl flex flex-col gap-4 border border-white/15 bg-slate-900/70 shadow-sm"
               >
                 {/* Mobile card header */}
                 <div className="flex items-center justify-between">
@@ -372,12 +372,12 @@ export const Certifications: React.FC = () => {
                     <Shield className="w-3 h-3" />
                     {currentCert.provider}
                   </div>
-                  <span className="text-[10px] font-mono text-slate-400">
+                  <span className="text-[10px] font-mono text-slate-300 font-medium">
                     {currentCert.category}
                   </span>
                 </div>
 
-                <h3 className="font-display font-bold text-lg text-slate-900 dark:text-brand-warm-gray leading-snug">
+                <h3 className="font-display font-bold text-lg text-white leading-snug">
                   {currentCert.title}
                 </h3>
 
@@ -385,7 +385,7 @@ export const Certifications: React.FC = () => {
                 {currentCert.image && (
                   <div
                     onClick={() => setModalCert(currentCert)}
-                    className="relative rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white/40 dark:bg-black/20 p-2 cursor-pointer flex items-center justify-center max-h-48"
+                    className="relative rounded-xl overflow-hidden border border-white/15 bg-black/40 p-2 cursor-pointer flex items-center justify-center max-h-48"
                   >
                     <img
                       src={currentCert.image}
@@ -396,8 +396,8 @@ export const Certifications: React.FC = () => {
                   </div>
                 )}
 
-                <div className="flex items-center gap-1.5 text-xs text-brand-burgundy font-medium">
-                  <CheckCircle2 className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 text-xs text-rose-400 font-semibold">
+                  <CheckCircle2 className="w-4 h-4 text-rose-400" />
                   <span>Credential Verified · {currentCert.provider}</span>
                 </div>
 
@@ -406,17 +406,17 @@ export const Certifications: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setModalCert(currentCert)}
-                    className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-brand-burgundy text-white font-semibold text-xs shadow-md hover:bg-brand-burgundy/90 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-burgundy"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-brand-burgundy hover:bg-rose-700 text-white font-semibold text-xs shadow-md border border-rose-500/30 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
                     aria-label={`View certificate for ${currentCert.title}`}
                   >
-                    <Eye className="w-3.5 h-3.5" />
+                    <Eye className="w-3.5 h-3.5 text-white" />
                     <span>View Certificate</span>
                   </button>
                 )}
 
-                <div className="flex items-center justify-between text-xs font-mono text-slate-500 pt-3 border-t border-slate-200/60 dark:border-white/5">
+                <div className="flex items-center justify-between text-xs font-mono text-slate-300 pt-3 border-t border-white/10">
                   <span>Issuer: {currentCert.provider}</span>
-                  <span>{String(currentIndex + 1).padStart(2, '0')} / {String(totalCerts).padStart(2, '0')}</span>
+                  <span className="font-semibold">{String(currentIndex + 1).padStart(2, '0')} / {String(totalCerts).padStart(2, '0')}</span>
                 </div>
               </motion.div>
             )}
@@ -427,19 +427,19 @@ export const Certifications: React.FC = () => {
             <button
               onClick={goPrev}
               disabled={currentIndex === 0}
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl glass-panel border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 disabled:opacity-30 hover:border-brand-burgundy/40 transition-all text-xs font-semibold"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl glass-panel border border-white/15 bg-slate-900/60 text-slate-200 disabled:opacity-30 hover:border-rose-500/40 transition-all text-xs font-semibold"
               aria-label="Previous certificate"
             >
               <ChevronLeft className="w-4 h-4" />
               Previous
             </button>
-            <span className="text-xs font-mono text-slate-400 tabular-nums whitespace-nowrap">
+            <span className="text-xs font-mono text-slate-300 font-semibold tabular-nums whitespace-nowrap">
               {currentIndex + 1} / {totalCerts}
             </span>
             <button
               onClick={goNext}
               disabled={currentIndex === totalCerts - 1}
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl glass-panel border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 disabled:opacity-30 hover:border-brand-burgundy/40 transition-all text-xs font-semibold"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl glass-panel border border-white/15 bg-slate-900/60 text-slate-200 disabled:opacity-30 hover:border-rose-500/40 transition-all text-xs font-semibold"
               aria-label="Next certificate"
             >
               Next

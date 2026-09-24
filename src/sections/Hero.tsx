@@ -192,31 +192,31 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
           transition={{ duration: 0.5, delay: 0.55 }}
           className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs text-slate-200 font-mono"
         >
-          <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-dark-card/90 border border-white/15 backdrop-blur-md shadow-md">
-            <MapPin className="w-3.5 h-3.5 text-brand-burgundy" />
+          <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900/85 border border-white/15 backdrop-blur-md shadow-md">
+            <MapPin className="w-3.5 h-3.5 text-amber-400" />
             <span>{personalInfo.location}</span>
           </div>
           <a
             href={`mailto:${personalInfo.email}`}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-dark-card/90 border border-white/15 backdrop-blur-md shadow-md hover:border-brand-burgundy/60 hover:text-white transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900/85 border border-white/15 backdrop-blur-md shadow-md hover:border-rose-500/60 hover:text-white transition-colors"
           >
-            <Mail className="w-3.5 h-3.5 text-brand-burgundy" />
+            <Mail className="w-3.5 h-3.5 text-rose-400" />
             <span>{personalInfo.email}</span>
           </a>
           <a
             href={`tel:${personalInfo.phoneRaw}`}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-dark-card/90 border border-white/15 backdrop-blur-md shadow-md hover:border-brand-slate hover:text-white transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900/85 border border-white/15 backdrop-blur-md shadow-md hover:border-sky-500/60 hover:text-white transition-colors"
           >
-            <Phone className="w-3.5 h-3.5 text-brand-slate" />
+            <Phone className="w-3.5 h-3.5 text-sky-400" />
             <span>{personalInfo.phone}</span>
           </a>
           <a
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-dark-card/90 border border-white/15 backdrop-blur-md shadow-md hover:border-brand-slate hover:text-white transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900/85 border border-white/15 backdrop-blur-md shadow-md hover:border-sky-500/60 hover:text-white transition-colors"
           >
-            <LinkedinIcon className="w-3.5 h-3.5 text-brand-slate" />
+            <LinkedinIcon className="w-3.5 h-3.5 text-sky-400" />
             <span>{personalInfo.linkedinDisplay}</span>
           </a>
         </motion.div>
@@ -231,32 +231,32 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
           {/* Primary CTA — Burgundy */}
           <a
             href="#inquiry"
-            className="px-6 py-3 rounded-xl bg-brand-burgundy text-white font-semibold text-sm shadow-xl shadow-brand-burgundy/30 hover:bg-brand-burgundy/90 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 border border-brand-burgundy/50"
+            className="px-6 py-3 rounded-xl bg-brand-burgundy text-white font-semibold text-sm shadow-xl shadow-brand-burgundy/30 hover:bg-rose-700 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 border border-rose-500/50"
           >
             <span>Start a Project</span>
-            <Bot className="w-4 h-4" />
+            <Bot className="w-4 h-4 text-white" />
           </a>
 
           <a
             href="#experience"
-            className="px-6 py-3 rounded-xl bg-dark-card/90 border border-white/20 hover:border-brand-slate text-white font-medium text-sm hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 backdrop-blur-md shadow-md hover:bg-dark-card"
+            className="px-6 py-3 rounded-xl bg-slate-900/85 border border-white/20 hover:border-rose-500/50 text-white font-medium text-sm hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 backdrop-blur-md shadow-md hover:bg-slate-900"
           >
             <span>View Experience</span>
-            <ArrowDown className="w-4 h-4 text-brand-slate" />
+            <ArrowDown className="w-4 h-4 text-rose-400" />
           </a>
 
           <a
             href={personalInfo.resumeUrl}
             download="Amit_Halder_Resume.pdf"
-            className="px-6 py-3 rounded-xl bg-dark-card/90 border border-white/20 hover:border-brand-slate text-white font-medium text-sm hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 backdrop-blur-md shadow-md hover:bg-dark-card group"
+            className="px-6 py-3 rounded-xl bg-slate-900/85 border border-white/20 hover:border-rose-500/50 text-white font-medium text-sm hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 backdrop-blur-md shadow-md hover:bg-slate-900 group"
           >
-            <Download className="w-4 h-4 text-brand-slate group-hover:translate-y-0.5 transition-transform" />
+            <Download className="w-4 h-4 text-rose-400 group-hover:translate-y-0.5 transition-transform" />
             <span>Download CV</span>
           </a>
 
           <a
             href="#skills"
-            className="px-6 py-3 rounded-xl bg-dark-card/90 border border-white/20 hover:border-brand-slate text-brand-warm-gray hover:text-white font-medium text-sm hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 backdrop-blur-md shadow-md"
+            className="px-6 py-3 rounded-xl bg-slate-900/85 border border-white/20 hover:border-rose-500/50 text-white font-medium text-sm hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 backdrop-blur-md shadow-md"
           >
             <span>Explore Skills</span>
           </a>
@@ -269,28 +269,28 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
           transition={{ duration: 0.7, delay: 0.7 }}
           className="mt-14 w-full grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
         >
-          <div className="glass-card p-4 rounded-2xl flex flex-col items-center justify-center text-center bg-dark-card/90 backdrop-blur-md border border-white/10 shadow-lg">
-            <BrainCircuit className="w-5 h-5 text-brand-burgundy mb-2" />
+          <div className="glass-card p-4 rounded-2xl flex flex-col items-center justify-center text-center bg-slate-900/85 backdrop-blur-md border border-white/15 shadow-lg">
+            <BrainCircuit className="w-5 h-5 text-rose-400 mb-2" />
             <span className="font-display font-bold text-2xl text-white">2+ Years</span>
-            <span className="text-xs text-slate-300 font-mono">GenAI &amp; ML Workflows</span>
+            <span className="text-xs text-slate-300 font-mono font-medium">GenAI &amp; ML Workflows</span>
           </div>
 
-          <div className="glass-card p-4 rounded-2xl flex flex-col items-center justify-center text-center bg-dark-card/90 backdrop-blur-md border border-white/10 shadow-lg">
-            <Layers className="w-5 h-5 text-brand-slate mb-2" />
+          <div className="glass-card p-4 rounded-2xl flex flex-col items-center justify-center text-center bg-slate-900/85 backdrop-blur-md border border-white/15 shadow-lg">
+            <Layers className="w-5 h-5 text-sky-400 mb-2" />
             <span className="font-display font-bold text-2xl text-white">6+ Years</span>
-            <span className="text-xs text-slate-300 font-mono">Operations &amp; Analytics</span>
+            <span className="text-xs text-slate-300 font-mono font-medium">Operations &amp; Analytics</span>
           </div>
 
-          <div className="glass-card p-4 rounded-2xl flex flex-col items-center justify-center text-center bg-dark-card/90 backdrop-blur-md border border-white/10 shadow-lg">
-            <Sparkles className="w-5 h-5 text-brand-warm-gray mb-2" />
+          <div className="glass-card p-4 rounded-2xl flex flex-col items-center justify-center text-center bg-slate-900/85 backdrop-blur-md border border-white/15 shadow-lg">
+            <Sparkles className="w-5 h-5 text-amber-400 mb-2" />
             <span className="font-display font-bold text-2xl text-white">{certifications.length}</span>
-            <span className="text-xs text-slate-300 font-mono">Verified Credentials</span>
+            <span className="text-xs text-slate-300 font-mono font-medium">Verified Credentials</span>
           </div>
 
-          <div className="glass-card p-4 rounded-2xl flex flex-col items-center justify-center text-center bg-dark-card/90 backdrop-blur-md border border-white/10 shadow-lg">
-            <Database className="w-5 h-5 text-brand-slate mb-2" />
+          <div className="glass-card p-4 rounded-2xl flex flex-col items-center justify-center text-center bg-slate-900/85 backdrop-blur-md border border-white/15 shadow-lg">
+            <Database className="w-5 h-5 text-emerald-400 mb-2" />
             <span className="font-display font-bold text-2xl text-white">6</span>
-            <span className="text-xs text-slate-300 font-mono">Languages Mastered</span>
+            <span className="text-xs text-slate-300 font-mono font-medium">Languages Mastered</span>
           </div>
         </motion.div>
       </div>

@@ -51,10 +51,10 @@ const initialForm: FormData = {
 };
 
 const serviceHighlights = [
-  { icon: <Globe className="w-4 h-4" />, label: 'Website Development' },
-  { icon: <Smartphone className="w-4 h-4" />, label: 'App Development' },
-  { icon: <BarChart3 className="w-4 h-4" />, label: 'Excel & Power BI' },
-  { icon: <Cpu className="w-4 h-4" />, label: 'AI / ML / Automation' },
+  { icon: <Globe className="w-4 h-4 text-sky-400" />, label: 'Website Development' },
+  { icon: <Smartphone className="w-4 h-4 text-indigo-400" />, label: 'App Development' },
+  { icon: <BarChart3 className="w-4 h-4 text-emerald-400" />, label: 'Excel & Power BI' },
+  { icon: <Cpu className="w-4 h-4 text-rose-400" />, label: 'AI / ML / Automation' },
 ];
 
 export const Inquiry: React.FC = () => {
@@ -170,27 +170,27 @@ Amit Halder Portfolio
   };
 
   const inputClass = (field: keyof FormData) =>
-    `w-full px-4 py-3 rounded-xl text-sm font-sans bg-white dark:bg-white/5 border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-burgundy text-slate-900 dark:text-brand-warm-gray placeholder:text-slate-400 dark:placeholder:text-slate-500 ${
+    `w-full px-4 py-3 rounded-xl text-sm font-sans bg-slate-900/90 border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 text-white placeholder:text-slate-400 ${
       errors[field]
-        ? 'border-red-400 dark:border-red-400/60'
-        : 'border-slate-200 dark:border-white/10 focus:border-brand-burgundy/50 dark:focus:border-brand-burgundy/50'
+        ? 'border-red-400'
+        : 'border-white/15 focus:border-rose-500/60'
     }`;
 
   return (
     <section id="inquiry" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Section Header */}
       <div className="flex items-center gap-2 mb-3">
-        <span className="font-mono text-xs text-brand-burgundy uppercase tracking-widest">
+        <span className="font-mono text-xs text-rose-400 uppercase tracking-widest font-semibold">
           07 // Project Inquiry
         </span>
-        <div className="h-[1px] flex-1 max-w-[80px] bg-brand-burgundy/30" />
+        <div className="h-[1px] flex-1 max-w-[80px] bg-rose-500/30" />
       </div>
 
       <div className="mb-10">
-        <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 dark:text-brand-warm-gray tracking-tight">
+        <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
           Project Inquiry
         </h2>
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 max-w-xl font-sans">
+        <p className="mt-2 text-sm text-slate-300 max-w-xl font-sans">
           Tell me what you&apos;re building, what you need, and how I can help.
         </p>
       </div>
@@ -205,10 +205,10 @@ Amit Halder Portfolio
           className="lg:col-span-5 flex flex-col gap-8"
         >
           <div>
-            <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-900 dark:text-brand-warm-gray mb-3">
+            <h3 className="font-display font-bold text-2xl sm:text-3xl text-white mb-3">
               Let&apos;s work together.
             </h3>
-            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+            <p className="text-sm text-slate-200 leading-relaxed font-sans">
               I partner with businesses and founders to build AI-powered products, automate workflows, and
               unlock actionable insights from data. Every project starts with a clear understanding of your
               goals — let&apos;s define yours.
@@ -220,12 +220,12 @@ Amit Halder Portfolio
             {serviceHighlights.map((s) => (
               <div
                 key={s.label}
-                className="glass-card p-4 rounded-xl flex items-center gap-3"
+                className="glass-card p-4 rounded-xl flex items-center gap-3 border border-white/15 bg-slate-900/70 shadow-sm"
               >
-                <div className="w-8 h-8 rounded-lg bg-brand-burgundy/10 border border-brand-burgundy/20 flex items-center justify-center text-brand-burgundy shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-slate-800/80 border border-white/15 flex items-center justify-center shrink-0">
                   {s.icon}
                 </div>
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300 leading-tight">
+                <span className="text-xs font-semibold text-slate-200 leading-tight">
                   {s.label}
                 </span>
               </div>
@@ -233,20 +233,20 @@ Amit Halder Portfolio
           </div>
 
           {/* Response expectation */}
-          <div className="glass-card p-5 rounded-2xl flex flex-col gap-3">
+          <div className="glass-card p-5 rounded-2xl flex flex-col gap-3 border border-white/15 bg-slate-900/70 shadow-sm">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand-burgundy animate-pulse" />
-              <span className="text-xs font-mono text-brand-burgundy uppercase tracking-wider">
+              <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+              <span className="text-xs font-mono text-rose-400 uppercase tracking-wider font-semibold">
                 Response Policy
               </span>
             </div>
-            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
-              I respond to all serious inquiries within <strong className="text-slate-900 dark:text-brand-warm-gray">24–48 hours</strong>.
+            <p className="text-xs text-slate-200 leading-relaxed font-sans">
+              I respond to all serious inquiries within <strong className="text-white font-semibold">24–48 hours</strong>.
               For urgent matters, email directly at:
             </p>
             <a
               href={`mailto:${personalInfo.email}`}
-              className="text-xs font-mono text-brand-burgundy hover:underline break-all"
+              className="text-xs font-mono text-rose-300 hover:text-white hover:underline break-all"
             >
               {personalInfo.email}
             </a>
@@ -254,9 +254,9 @@ Amit Halder Portfolio
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs font-mono text-brand-slate hover:text-brand-burgundy transition-colors"
+              className="flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white transition-colors"
             >
-              <LinkedinIcon className="w-3.5 h-3.5" />
+              <LinkedinIcon className="w-3.5 h-3.5 text-sky-400" />
               {personalInfo.linkedinDisplay}
             </a>
           </div>
@@ -270,7 +270,7 @@ Amit Halder Portfolio
           transition={{ duration: 0.6, delay: 0.1 }}
           className="lg:col-span-7"
         >
-          <div className="glass-panel p-7 sm:p-10 rounded-3xl border border-slate-200 dark:border-white/10">
+          <div className="glass-panel p-7 sm:p-10 rounded-3xl border border-white/15 bg-slate-900/70 shadow-xl">
             {/* Success State */}
             {formState === 'success' && (
               <motion.div
@@ -278,18 +278,18 @@ Amit Halder Portfolio
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex flex-col items-center text-center gap-4 py-10"
               >
-                <div className="w-16 h-16 rounded-2xl bg-brand-burgundy/10 border border-brand-burgundy/30 flex items-center justify-center">
-                  <CheckCircle2 className="w-8 h-8 text-brand-burgundy" />
+                <div className="w-16 h-16 rounded-2xl bg-rose-950/40 border border-rose-500/40 flex items-center justify-center">
+                  <CheckCircle2 className="w-8 h-8 text-rose-400" />
                 </div>
-                <h3 className="font-display font-bold text-xl text-slate-900 dark:text-brand-warm-gray">
+                <h3 className="font-display font-bold text-xl text-white">
                   Thank you! Your inquiry has been received successfully.
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300 max-w-sm leading-relaxed">
+                <p className="text-sm text-slate-200 max-w-sm leading-relaxed">
                   Your message has been sent to Amit Halder.
                 </p>
                 <button
                   onClick={() => setFormState('idle')}
-                  className="mt-2 px-5 py-2 rounded-xl bg-brand-burgundy text-white text-sm font-semibold hover:bg-brand-burgundy/90 transition-colors"
+                  className="mt-2 px-5 py-2 rounded-xl bg-brand-burgundy text-white text-sm font-semibold hover:bg-rose-700 transition-colors shadow-md border border-rose-500/30"
                 >
                   Send Another Inquiry
                 </button>
@@ -304,12 +304,12 @@ Amit Halder Portfolio
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-red-500/10 border border-red-400/30 text-red-500 dark:text-red-400 text-sm"
+                    className="flex items-start gap-3 p-4 rounded-xl bg-red-950/40 border border-red-500/40 text-red-200 text-sm"
                   >
-                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-rose-400" />
                     <div>
-                      <p className="font-semibold">Something went wrong while sending your inquiry.</p>
-                      <p className="text-xs mt-0.5">Please try again or contact me directly at askfor.amithalder@gmail.com</p>
+                      <p className="font-semibold text-white">Something went wrong while sending your inquiry.</p>
+                      <p className="text-xs mt-0.5 text-slate-300">Please try again or contact me directly at askfor.amithalder@gmail.com</p>
                     </div>
                   </motion.div>
                 )}
@@ -328,8 +328,8 @@ Amit Halder Portfolio
                 {/* Row 1: Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="inquiry-name" className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                      Full Name <span className="text-brand-burgundy">*</span>
+                    <label htmlFor="inquiry-name" className="text-xs font-mono text-slate-300 font-medium">
+                      Full Name <span className="text-rose-400 font-bold">*</span>
                     </label>
                     <input
                       id="inquiry-name"
@@ -344,15 +344,15 @@ Amit Halder Portfolio
                       aria-describedby={errors.name ? 'name-error' : undefined}
                     />
                     {errors.name && (
-                      <span id="name-error" className="text-xs text-red-500 font-mono" role="alert">
+                      <span id="name-error" className="text-xs text-rose-400 font-mono" role="alert">
                         {errors.name}
                       </span>
                     )}
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="inquiry-email" className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                      Email Address <span className="text-brand-burgundy">*</span>
+                    <label htmlFor="inquiry-email" className="text-xs font-mono text-slate-300 font-medium">
+                      Email Address <span className="text-rose-400 font-bold">*</span>
                     </label>
                     <input
                       id="inquiry-email"
@@ -367,7 +367,7 @@ Amit Halder Portfolio
                       aria-describedby={errors.email ? 'email-error' : undefined}
                     />
                     {errors.email && (
-                      <span id="email-error" className="text-xs text-red-500 font-mono" role="alert">
+                      <span id="email-error" className="text-xs text-rose-400 font-mono" role="alert">
                         {errors.email}
                       </span>
                     )}
@@ -377,7 +377,7 @@ Amit Halder Portfolio
                 {/* Row 2: Company + Inquiry Type */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="inquiry-company" className="text-xs font-mono text-slate-500 dark:text-slate-400">
+                    <label htmlFor="inquiry-company" className="text-xs font-mono text-slate-300 font-medium">
                       Company / Organization <span className="text-slate-400 text-[10px]">(optional)</span>
                     </label>
                     <input
@@ -393,8 +393,8 @@ Amit Halder Portfolio
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="inquiry-type" className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                      Service / Inquiry Type <span className="text-brand-burgundy">*</span>
+                    <label htmlFor="inquiry-type" className="text-xs font-mono text-slate-300 font-medium">
+                      Service / Inquiry Type <span className="text-rose-400 font-bold">*</span>
                     </label>
                     <select
                       id="inquiry-type"
@@ -405,13 +405,13 @@ Amit Halder Portfolio
                       aria-required="true"
                       aria-describedby={errors.inquiryType ? 'type-error' : undefined}
                     >
-                      <option value="" disabled>Select a service...</option>
+                      <option value="" disabled className="bg-slate-900 text-slate-400">Select a service...</option>
                       {inquiryTypes.map((t) => (
-                        <option key={t} value={t}>{t}</option>
+                        <option key={t} value={t} className="bg-slate-900 text-slate-100">{t}</option>
                       ))}
                     </select>
                     {errors.inquiryType && (
-                      <span id="type-error" className="text-xs text-red-500 font-mono" role="alert">
+                      <span id="type-error" className="text-xs text-rose-400 font-mono" role="alert">
                         {errors.inquiryType}
                       </span>
                     )}
@@ -421,8 +421,8 @@ Amit Halder Portfolio
                 {/* Row 3: Budget + Preferred Contact */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="inquiry-budget" className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                      Budget Range <span className="text-brand-burgundy">*</span>
+                    <label htmlFor="inquiry-budget" className="text-xs font-mono text-slate-300 font-medium">
+                      Budget Range <span className="text-rose-400 font-bold">*</span>
                     </label>
                     <select
                       id="inquiry-budget"
@@ -433,23 +433,23 @@ Amit Halder Portfolio
                       aria-required="true"
                       aria-describedby={errors.budget ? 'budget-error' : undefined}
                     >
-                      <option value="" disabled>Select budget range...</option>
-                      <option value="Under ₹50,000">Under ₹50,000</option>
-                      <option value="₹50,000 – ₹75,000">₹50,000 – ₹75,000</option>
-                      <option value="₹75,000 – ₹2,00,000">₹75,000 – ₹2,00,000</option>
-                      <option value="₹2,00,000+">₹2,00,000+</option>
-                      <option value="Hourly / Consulting">Hourly / Consulting</option>
-                      <option value="Let's discuss">Let&apos;s discuss</option>
+                      <option value="" disabled className="bg-slate-900 text-slate-400">Select budget range...</option>
+                      <option value="Under ₹50,000" className="bg-slate-900 text-slate-100">Under ₹50,000</option>
+                      <option value="₹50,000 – ₹75,000" className="bg-slate-900 text-slate-100">₹50,000 – ₹75,000</option>
+                      <option value="₹75,000 – ₹2,00,000" className="bg-slate-900 text-slate-100">₹75,000 – ₹2,00,000</option>
+                      <option value="₹2,00,000+" className="bg-slate-900 text-slate-100">₹2,00,000+</option>
+                      <option value="Hourly / Consulting" className="bg-slate-900 text-slate-100">Hourly / Consulting</option>
+                      <option value="Let's discuss" className="bg-slate-900 text-slate-100">Let&apos;s discuss</option>
                     </select>
                     {errors.budget && (
-                      <span id="budget-error" className="text-xs text-red-500 font-mono" role="alert">
+                      <span id="budget-error" className="text-xs text-rose-400 font-mono" role="alert">
                         {errors.budget}
                       </span>
                     )}
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="inquiry-contact" className="text-xs font-mono text-slate-500 dark:text-slate-400">
+                    <label htmlFor="inquiry-contact" className="text-xs font-mono text-slate-300 font-medium">
                       Preferred Contact Method <span className="text-slate-400 text-[10px]">(optional)</span>
                     </label>
                     <select
@@ -459,19 +459,19 @@ Amit Halder Portfolio
                       onChange={handleChange}
                       className={`${inputClass('preferredContact')} cursor-pointer`}
                     >
-                      <option value="">No preference</option>
-                      <option value="Email">Email</option>
-                      <option value="LinkedIn">LinkedIn</option>
-                      <option value="Phone">Phone</option>
-                      <option value="Video Call">Video Call</option>
+                      <option value="" className="bg-slate-900 text-slate-100">No preference</option>
+                      <option value="Email" className="bg-slate-900 text-slate-100">Email</option>
+                      <option value="LinkedIn" className="bg-slate-900 text-slate-100">LinkedIn</option>
+                      <option value="Phone" className="bg-slate-900 text-slate-100">Phone</option>
+                      <option value="Video Call" className="bg-slate-900 text-slate-100">Video Call</option>
                     </select>
                   </div>
                 </div>
 
                 {/* Project Details */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="inquiry-message" className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                    Project Details / Message <span className="text-brand-burgundy">*</span>
+                  <label htmlFor="inquiry-message" className="text-xs font-mono text-slate-300 font-medium">
+                    Project Details / Message <span className="text-rose-400 font-bold">*</span>
                   </label>
                   <textarea
                     id="inquiry-message"
@@ -485,7 +485,7 @@ Amit Halder Portfolio
                     aria-describedby={errors.message ? 'message-error' : undefined}
                   />
                   {errors.message && (
-                    <span id="message-error" className="text-xs text-red-500 font-mono" role="alert">
+                    <span id="message-error" className="text-xs text-rose-400 font-mono" role="alert">
                       {errors.message}
                     </span>
                   )}
@@ -498,16 +498,16 @@ Amit Halder Portfolio
                 <button
                   type="submit"
                   disabled={formState === 'loading'}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-burgundy text-white font-semibold text-sm shadow-lg shadow-brand-burgundy/20 hover:bg-brand-burgundy/90 hover:shadow-brand-burgundy/30 active:scale-[0.99] transition-all disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-burgundy focus-visible:ring-offset-2"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-burgundy text-white font-semibold text-sm shadow-lg shadow-brand-burgundy/30 hover:bg-rose-700 hover:shadow-brand-burgundy/40 active:scale-[0.99] transition-all disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 border border-rose-500/30"
                 >
                   {formState === 'loading' ? (
                     <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <Loader2 className="w-4 h-4 animate-spin text-white" />
                       <span>Sending Inquiry...</span>
                     </>
                   ) : (
                     <>
-                      <Send className="w-4 h-4" />
+                      <Send className="w-4 h-4 text-white" />
                       <span>Submit Inquiry</span>
                     </>
                   )}

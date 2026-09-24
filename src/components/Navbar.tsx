@@ -79,10 +79,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-bold text-sm tracking-tight text-brand-warm-gray group-hover:text-brand-burgundy transition-colors">
+            <span className="font-display font-bold text-sm tracking-tight text-white group-hover:text-rose-300 transition-colors">
               {personalInfo.name}
             </span>
-            <span className="text-[11px] font-mono text-brand-slate hidden sm:block">
+            <span className="text-[11px] font-mono text-slate-300 hidden sm:block font-medium">
               GenAI / ML Engineer
             </span>
           </div>
@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
         {/* Desktop Navigation Links Pill */}
         <nav
-          className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full glass-panel shadow-lg shadow-black/20"
+          className="hidden lg:flex items-center gap-1 px-3.5 py-1.5 rounded-full glass-panel shadow-xl shadow-black/40"
           aria-label="Main Navigation"
         >
           {navLinks.map((link) => {
@@ -102,13 +102,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 className={`relative px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
                   isActive
                     ? 'text-white font-semibold'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-slate-300 hover:text-white'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeNavIndicator"
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-burgundy to-brand-slate shadow-sm"
+                    className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-burgundy to-rose-700 shadow-md shadow-brand-burgundy/30"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -130,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           {/* Mobile Hamburger Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200"
+            className="lg:hidden p-2.5 rounded-xl bg-slate-800/80 border border-white/20 text-white hover:bg-slate-700 transition-colors"
             aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
             aria-expanded={mobileMenuOpen}
           >
