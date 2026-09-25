@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export const BackgroundVideo: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (!videoRef.current) return;
+      if (document.hidden) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play().catch(() => {});
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
   return (
     <div
       className="fixed inset-0 z-0 pointer-events-none overflow-hidden select-none"
       aria-hidden="true"
+      style={{ contain: 'strict' }}
     >
-      {/* Fixed Background Video - Clean & Clearly Visible with subtle soft blur (1.5px) */}
+      {/* Fixed Background Video - Clean & Clearly Visible with subtle soft blur on desktop (1.5px) */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
-        className="w-full h-full object-cover object-center filter blur-[1.5px] scale-[1.01] transform-gpu opacity-85"
+        preload="metadata"
+        className="w-full h-full object-cover object-center md:filter md:blur-[1.5px] scale-[1.01] transform-gpu opacity-85 will-change-transform"
       >
         <source src="/background/Meaow.mp4" type="video/mp4" />
       </video>

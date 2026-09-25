@@ -2,9 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Menu, X, Sparkles } from 'lucide-react';
 import { personalInfo } from '../data/profile';
+import { useScrollSpy } from '../hooks/useScrollSpy';
+
+const defaultSectionIds = [
+  'home',
+  'about',
+  'journey',
+  'experience',
+  'skills',
+  'education',
+  'certifications',
+  'documents',
+  'inquiry',
+  'contact',
+];
 
 interface NavbarProps {
-  activeSection: string;
+  activeSection?: string;
+  sectionIds?: string[];
 }
 
 const navLinks = [
@@ -19,14 +34,21 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
-export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
+export const Navbar: React.FC<NavbarProps> = ({ activeSection: propActiveSection, sectionIds = defaultSectionIds }) => {
+  const spyActiveSection = useScrollSpy(sectionIds);
+  const activeSection = propActiveSection || spyActiveSection;
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const prefersReduced = useReducedMotion();
 
   useEffect(() => {
+    let lastScrolled = window.scrollY > 40;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      const scrolled = window.scrollY > 40;
+      if (scrolled !== lastScrolled) {
+        lastScrolled = scrolled;
+        setIsScrolled(scrolled);
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);

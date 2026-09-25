@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useScrollSpy } from './hooks/useScrollSpy';
 import { Loader } from './components/Loader';
 import { BackgroundVideo } from './components/BackgroundVideo';
 import { ScrollProgress } from './components/ScrollProgress';
@@ -19,22 +18,8 @@ import { Inquiry } from './sections/Inquiry';
 import { Contact } from './sections/Contact';
 import { Footer } from './components/Footer';
 
-const sectionIds = [
-  'home',
-  'about',
-  'journey',
-  'experience',
-  'skills',
-  'education',
-  'certifications',
-  'documents',
-  'inquiry',
-  'contact',
-];
-
 export function App() {
   const [loading, setLoading] = useState(true);
-  const activeSection = useScrollSpy(sectionIds, 120);
 
   return (
     <div className="min-h-screen bg-dark-bg text-brand-warm-gray selection:bg-brand-burgundy/20 selection:text-brand-burgundy relative font-sans transition-colors duration-300">
@@ -54,7 +39,7 @@ export function App() {
       <BackgroundGrid />
 
       {/* Floating Glass Navigation */}
-      <Navbar activeSection={activeSection} />
+      <Navbar />
 
       {/* Main Content Area */}
       <main className="relative z-10">

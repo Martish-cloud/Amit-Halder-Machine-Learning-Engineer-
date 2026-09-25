@@ -26,6 +26,12 @@ export const CustomCursor: React.FC = () => {
     };
     fineCheck.addEventListener('change', handlePointerChange);
 
+    if (!fineCheck.matches) {
+      return () => {
+        fineCheck.removeEventListener('change', handlePointerChange);
+      };
+    }
+
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -48,7 +54,7 @@ export const CustomCursor: React.FC = () => {
       fineCheck.removeEventListener('change', handlePointerChange);
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [mouseX, mouseY]);
+  }, [mouseX, mouseY, isFinePointer]);
 
   if (!isFinePointer) return null;
 

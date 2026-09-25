@@ -226,6 +226,7 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
                 src={imageSrc}
                 alt={altText}
                 loading="eager"
+                decoding="async"
                 draggable={false}
                 className="max-w-full max-h-[70vh] w-auto h-auto object-contain rounded-xl shadow-lg border border-slate-300/60 dark:border-white/10 select-none"
               />
