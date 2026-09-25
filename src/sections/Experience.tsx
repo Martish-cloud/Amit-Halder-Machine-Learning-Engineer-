@@ -61,7 +61,8 @@ export const Experience: React.FC = () => {
               key={exp.id}
               layout
               initial={{ opacity: 0, x: -15 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, margin: '-40px' }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               className="relative pl-6 sm:pl-10 group"

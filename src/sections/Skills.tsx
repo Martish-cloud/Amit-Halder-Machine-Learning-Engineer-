@@ -77,7 +77,8 @@ export const Skills: React.FC = () => {
               key={category.id}
               layout
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false, margin: '-40px' }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.35 }}
               className="glass-card p-6 rounded-2xl flex flex-col justify-between group border border-white/15 bg-slate-900/70 hover:border-white/25 transition-all shadow-sm hover:shadow-lg"

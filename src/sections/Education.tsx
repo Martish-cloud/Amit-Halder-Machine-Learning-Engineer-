@@ -33,7 +33,7 @@ export const Education: React.FC = () => {
                 key={edu.id}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, margin: '-40px' }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 className="glass-card p-6 rounded-2xl relative overflow-hidden border border-white/15 bg-slate-900/70 hover:border-white/25 transition-all shadow-sm"
               >
@@ -92,7 +92,7 @@ export const Education: React.FC = () => {
                 key={lang.language}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, margin: '-40px' }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
                 className="glass-card p-5 rounded-2xl flex flex-col justify-between border border-white/15 bg-slate-900/70 hover:border-white/25 transition-all shadow-sm"
               >

@@ -39,7 +39,7 @@ export const CareerEvolution: React.FC = () => {
             key={stage.step}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
+            viewport={{ once: false, margin: '-50px' }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
             className="glass-card p-6 rounded-2xl flex flex-col justify-between relative group border border-white/12"
           >

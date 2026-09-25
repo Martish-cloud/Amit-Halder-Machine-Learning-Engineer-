@@ -33,7 +33,7 @@ export const About: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: false, margin: '-60px' }}
           transition={{ duration: 0.6 }}
           className="lg:col-span-5 flex flex-col gap-6"
         >
@@ -70,7 +70,7 @@ export const About: React.FC = () => {
               key={pillar.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
+              viewport={{ once: false, margin: '-60px' }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
               className={`glass-card p-5 rounded-2xl flex flex-col justify-between group border border-white/12 ${
                 idx === 4 ? 'sm:col-span-2' : ''

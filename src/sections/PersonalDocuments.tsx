@@ -41,7 +41,7 @@ export const PersonalDocuments: React.FC = () => {
             key={doc.id}
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
+            viewport={{ once: false, margin: '-40px' }}
             transition={{ duration: 0.4, delay: idx * 0.08 }}
             className="group relative"
           >

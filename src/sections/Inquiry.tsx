@@ -200,7 +200,7 @@ Amit Halder Portfolio
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: false, margin: '-60px' }}
           transition={{ duration: 0.6 }}
           className="lg:col-span-5 flex flex-col gap-8"
         >
@@ -266,7 +266,7 @@ Amit Halder Portfolio
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: false, margin: '-60px' }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="lg:col-span-7"
         >

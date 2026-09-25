@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useReducedMotion, useInView } from 'framer-motion';
 import {
   ArrowDown,
   Download,
@@ -16,19 +16,26 @@ import { LinkedinIcon } from '../components/icons';
 import { personalInfo, certifications } from '../data/profile';
 
 // ─── Proper Typewriter Effect with Blinking Cursor ───────────────────────────
-function TypewriterName({ text, isReady = true }: { text: string; isReady?: boolean }) {
+function TypewriterName({
+  text,
+  isReady = true,
+  inView = true,
+}: {
+  text: string;
+  isReady?: boolean;
+  inView?: boolean;
+}) {
   const prefersReduced = useReducedMotion();
   const [displayedCount, setDisplayedCount] = useState(() => (prefersReduced ? text.length : 0));
 
   useEffect(() => {
     if (prefersReduced) return;
-
-    if (!isReady) return;
+    if (!isReady || !inView) return;
 
     let current = 0;
     let interval: ReturnType<typeof setInterval>;
 
-    // Wait a brief 350ms after the hero entrance settles, then start typing smoothly
+    // Wait a brief 200ms after entering view, then start typing smoothly
     const timeout = setTimeout(() => {
       interval = setInterval(() => {
         current++;
@@ -36,14 +43,15 @@ function TypewriterName({ text, isReady = true }: { text: string; isReady?: bool
         if (current >= text.length) {
           clearInterval(interval);
         }
-      }, 90); // 90ms per character: deliberate, readable, premium
-    }, 350);
+      }, 85); // 85ms per character: deliberate, readable, premium
+    }, 200);
 
     return () => {
       clearTimeout(timeout);
       if (interval) clearInterval(interval);
+      setDisplayedCount(0);
     };
-  }, [text, isReady, prefersReduced]);
+  }, [text, isReady, inView, prefersReduced]);
 
   if (prefersReduced) {
     return (
@@ -55,7 +63,8 @@ function TypewriterName({ text, isReady = true }: { text: string; isReady?: bool
     );
   }
 
-  const typedText = text.slice(0, displayedCount);
+  const activeCount = !isReady || !inView ? 0 : displayedCount;
+  const typedText = text.slice(0, activeCount);
 
   return (
     <span className="inline-flex items-baseline relative">
@@ -90,6 +99,8 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
   const heroName = personalInfo.name.toUpperCase();
   const prefersReduced = useReducedMotion();
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const isHeadingInView = useInView(headingRef, { once: false, amount: 0.3 });
 
   // Subtle entrance animation: fade in, upward movement (10 -> 0), spring-like settle
   const titleVariants = {
@@ -104,7 +115,7 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
             stiffness: 160,
             damping: 18,
             mass: 0.8,
-            delay: 0.5,
+            delay: 0.1,
           },
     },
   };
@@ -133,8 +144,9 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
         {/* Status Pill Badge */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5, delay: 0.05 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-card/90 border border-brand-burgundy/40 text-brand-warm-gray text-xs font-mono mb-6 backdrop-blur-md shadow-lg shadow-black/30"
         >
           <span className="w-2 h-2 rounded-full bg-brand-burgundy animate-ping" />
@@ -144,17 +156,19 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
 
         {/* Hero Headline — Typewriter Effect */}
         <h1
+          ref={headingRef}
           className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white flex items-baseline justify-center flex-wrap gap-y-1 min-h-[1.15em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
           aria-label={heroName}
         >
-          <TypewriterName text={heroName} isReady={isLoaded} />
+          <TypewriterName text={heroName} isReady={isLoaded} inView={isHeadingInView} />
         </h1>
 
         {/* Sub-headline / Professional Title — Subtle Entrance & Settle */}
         <motion.div
           variants={titleVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: false }}
           className="mt-3 sm:mt-4 text-xl sm:text-2xl md:text-3xl font-medium tracking-tight"
         >
           <span className="text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] font-display font-bold">
@@ -165,8 +179,9 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
         {/* Value Proposition Statement */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="mt-4 max-w-2xl text-base sm:text-lg font-mono text-[#9DDCFF] font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
         >
           &ldquo;{personalInfo.tagline}&rdquo;
@@ -175,8 +190,9 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
         {/* Supporting Bio */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-4 max-w-3xl text-sm sm:text-base text-slate-200 leading-relaxed font-sans drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]"
         >
           A results-driven Generative AI Developer, Machine Learning Engineer, and AI Automation
@@ -191,8 +207,9 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
         {/* Contact Info Pills */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.55 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5, delay: 0.25 }}
           className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs text-slate-200 font-mono"
         >
           <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900/85 border border-white/15 backdrop-blur-md shadow-md">
@@ -227,8 +244,9 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
         {/* Hero Action CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
         >
           {/* Primary CTA — Burgundy */}
@@ -268,8 +286,9 @@ export const Hero: React.FC<HeroProps> = ({ isLoaded = true }) => {
         {/* Factual Value Summary Cards */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.7, delay: 0.35 }}
           className="mt-14 w-full grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
         >
           <div className="glass-card p-4 rounded-2xl flex flex-col items-center justify-center text-center bg-slate-900/85 backdrop-blur-md border border-white/15 shadow-lg">
